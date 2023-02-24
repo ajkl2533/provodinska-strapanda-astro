@@ -1,6 +1,8 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@fontsource/barlow-condensed': ^4.5.9
+  '@fontsource/montserrat': ^4.5.14
   '@tokens-studio/sd-transforms': ^0.4.4
   '@typescript-eslint/eslint-plugin': ^5.53.0
   '@typescript-eslint/parser': ^5.53.0
@@ -17,6 +19,8 @@ specifiers:
   typescript: ^4.9.5
 
 dependencies:
+  '@fontsource/barlow-condensed': 4.5.9
+  '@fontsource/montserrat': 4.5.14
   astro: 2.0.14
 
 devDependencies:
@@ -589,6 +593,14 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@fontsource/barlow-condensed/4.5.9:
+    resolution: {integrity: sha512-vhxHtTw4y3R6kErgOVb4wkQ6H+znGNK+G9J7R/pFZ6uE6lxdyIR1t7fG0tgEJIrdA0otLLyiVSwtZbQRHmexaA==}
+    dev: false
+
+  /@fontsource/montserrat/4.5.14:
+    resolution: {integrity: sha512-fTvrteVzuFUePhr4QYBGoK8G/YHLJ3IhF1HhKg0AxcFvZajJT7rM7ULdmKLSd2PkX44R3aaFZq1zDbmjbGGI+w==}
+    dev: false
 
   /@humanwhocodes/config-array/0.11.8:
     resolution: {integrity: sha512-UybHIJzJnR5Qc/MsD9Kr+RpO2h+/P1GhOwdiLPXK5TWk5sgTdu88bTD9UP+CKbPPh5Rni1u0GjAdYQLemG8g+g==}

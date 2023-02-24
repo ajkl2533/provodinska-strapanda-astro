@@ -1,100 +1,108 @@
 :root {
-  --sdSpace1x: 0.5rem;
-  --sdSpace2x: 1rem;
-  --sdSpace3x: 1.5rem;
-  --sdSpace4x: 2rem;
-  --sdSpace6x: 3rem;
-  --sdSpace8x: 4rem;
-  --sdSpace10x: 5rem;
-  --sdSpace12x: 6rem;
-  --sdSpace20x: 10rem;
-  --sdSpace30x: 15rem;
-  --sdColorsGreen50: #ebf2b3;
-  --sdColorsGreen100: #c3d98c;
-  --sdColorsGreen200: #9bbf65;
-  --sdColorsGreen300: #80b334;
-  --sdColorsGreen400: #65a603;
-  --sdColorsGreen500: #508d03;
-  --sdColorsGreen600: #407603;
-  --sdColorsGreen700: #2f5f02;
-  --sdColorsGreen800: #244d02;
-  --sdColorsGreen900: #192a01;
-  --sdColorsBrown50: #faf2db;
-  --sdColorsBrown100: #eed9aa;
-  --sdColorsBrown200: #debc7d;
-  --sdColorsBrown300: #c99d55;
-  --sdColorsBrown400: #b8873d;
-  --sdColorsBrown500: #a66617;
-  --sdColorsBrown600: #8f5814;
-  --sdColorsBrown700: #6a4210;
-  --sdColorsBrown800: #472c0a;
-  --sdColorsBrown900: #362108;
-  --sdColorsNeutral50: #eff8fa;
-  --sdColorsNeutral100: #e2ebee;
-  --sdColorsNeutral200: #d5dee2;
-  --sdColorsNeutral300: #bbc4c9;
-  --sdColorsNeutral400: #869097;
-  --sdColorsNeutral500: #6c767e;
-  --sdColorsNeutral600: #515c65;
-  --sdColorsNeutral700: #37424c;
-  --sdColorsNeutral800: #28333e;
-  --sdColorsNeutral900: #1c2833;
-  --sdFontsBase: Montserrat;
-  --sdFontsHeading: 'Barlow Condensed';
-  --sdFontWeightsRegular: 400;
-  --sdFontWeightsMedium: 500;
-  --sdFontWeightsBold: 700;
-  --sdFontSizes20: 0.875rem;
-  --sdFontSizes30: 1rem;
-  --sdFontSizes40: 1.125rem;
-  --sdFontSizes50: 1.25rem;
-  --sdFontSizes60: 1.5rem;
-  --sdFontSizes70: 2rem;
-  --sdFontSizes80: 3rem;
-  --sdFontSizes90: 4rem;
-  --sdFontSizes100: 6rem;
-  --sdLetterSpacingsXxs: -1.5px;
-  --sdLetterSpacingsXs: -0.5px;
-  --sdLetterSpacingsBase: 0;
-  --sdLetterSpacingsSm: 0.15px;
-  --sdLetterSpacingsMd: 0.25px;
-  --sdLetterSpacingsLg: 0.5px;
-  --sdLetterSpacingsXl: 1.5px;
-  --sdLineHeightsSm: 1;
-  --sdLineHeightsMd: 1.25;
-  --sdLineHeightsLg: 1.5;
-  --sdTextCasesNormal: none;
-  --sdTextCasesUpper: uppercase;
-  --sdRadiiSm: 4px;
-  --sdRadiiMd: 8px;
-  --sdRadiiLg: 16px;
-  --sdBoxShadow: 0 0 0 0 #00000026, 3 4 11 0 #00000026, 11 18 21 0 #00000021,
+  --space1x: 0.5rem;
+  --space2x: 1rem;
+  --space3x: 1.5rem;
+  --space4x: 2rem;
+  --space6x: 3rem;
+  --space8x: 4rem;
+  --space10x: 5rem;
+  --space12x: 6rem;
+  --space20x: 10rem;
+  --space30x: 15rem;
+
+  --green50: #ebf2b3;
+  --green100: #c3d98c;
+  --green200: #9bbf65;
+  --green300: #80b334;
+  --green400: #65a603;
+  --green500: #508d03;
+  --green600: #407603;
+  --green700: #2f5f02;
+  --green800: #244d02;
+  --green900: #192a01;
+
+  --brown50: #faf2db;
+  --brown100: #eed9aa;
+  --brown200: #debc7d;
+  --brown300: #c99d55;
+  --brown400: #b8873d;
+  --brown500: #a66617;
+  --brown600: #8f5814;
+  --brown700: #6a4210;
+  --brown800: #472c0a;
+  --brown900: #362108;
+
+  --neutral50: #eff8fa;
+  --neutral100: #e2ebee;
+  --neutral200: #d5dee2;
+  --neutral300: #bbc4c9;
+  --neutral400: #869097;
+  --neutral500: #6c767e;
+  --neutral600: #515c65;
+  --neutral700: #37424c;
+  --neutral800: #28333e;
+  --neutral900: #1c2833;
+
+  --fontBase: Montserrat;
+  --fontHeading: 'Barlow Condensed';
+
+  --fontWeightsRegular: 400;
+  --fontWeightsMedium: 500;
+  --fontWeightsBold: 700;
+
+  --fontSizes20: 0.875rem;
+  --fontSizes30: 1rem;
+  --fontSizes40: 1.125rem;
+  --fontSizes50: 1.25rem;
+  --fontSizes60: 1.5rem;
+  --fontSizes70: 2rem;
+  --fontSizes80: 3rem;
+  --fontSizes90: 4rem;
+  --fontSizes100: 6rem;
+
+  --letterSpacingsXxs: -1.5px;
+  --letterSpacingsXs: -0.5px;
+  --letterSpacingsBase: 0;
+  --letterSpacingsSm: 0.15px;
+  --letterSpacingsMd: 0.25px;
+  --letterSpacingsLg: 0.5px;
+  --letterSpacingsXl: 1.5px;
+
+  --lineHeightsSm: 1;
+  --lineHeightsMd: 1.25;
+  --lineHeightsLg: 1.5;
+
+  --radiiSm: 4px;
+  --radiiMd: 8px;
+  --radiiLg: 16px;
+
+  --shadow: 0 0 0 0 #00000026, 3 4 11 0 #00000026, 11 18 21 0 #00000021,
     24 40 28 0 #00000014, 43 70 33 0 #00000005, 67 110 36 0 #00000000;
 
-  --sdTypographyHeadline1: var(--sdFontWeightsBold) var(--sdFontSizes100) /
+  --headline1: var(--sdFontWeightsBold) var(--sdFontSizes100) /
     var(--sdLineHeightMd) var(--sdFontsHeading);
-  --sdTypographyHeadline1Condensed: var(--sdFontWeightsBold)
-    var(--sdFontSizes100) / 1 var(--sdFontsHeading);
-  --sdTypographyHeadline2: var(--sdFontWeightsBold) var(--sdFontSizes90) /
+  --headline1Condensed: var(--sdFontWeightsBold) var(--sdFontSizes100) /
+    var(--sdLineHeightSm) 1 var(--sdFontsHeading);
+  --headline2: var(--sdFontWeightsBold) var(--sdFontSizes90) /
     var(--sdLineHeightMd) var(--sdFontsHeading);
-  --sdTypographyHeadline3: var(--sdFontWeightsRegular) var(--sdFontSizes80) /
+  --headline3: var(--sdFontWeightsRegular) var(--sdFontSizes80) /
     var(--sdLineHeightMd) var(--sdFontsHeading);
-  --sdTypographyHeadline4: var(--sdFontWeightsRegular) var(--sdFontSizes70) /
+  --headline4: var(--sdFontWeightsRegular) var(--sdFontSizes70) /
     var(--sdLineHeightMd) var(--sdFontsHeading);
-  --sdTypographyHeadline5: var(--sdFontWeightsRegular) var(--sdFontSizes60) /
+  --headline5: var(--sdFontWeightsRegular) var(--sdFontSizes60) /
     var(--sdLineHeightMd) var(--sdFontsHeading);
-  --sdTypographyHeadline6: var(--sdFontWeightsRegular) var(--sdFontSizes50) /
+  --headline6: var(--sdFontWeightsRegular) var(--sdFontSizes50) /
     var(--sdLineHeightMd) var(--sdFontsHeading);
-  --sdTypographySubtitle: var(--sdFontWeightsRegular) var(--sdFontSizes40) /
+  --subtitle: var(--sdFontWeightsRegular) var(--sdFontSizes40) /
     var(--sdLineHeightMd) var(--sdFontsHeading);
-  --sdTypographyBody1: var(--sdFontWeightsRegular) var(--sdFontSizes30) /
+  --body1: var(--sdFontWeightsRegular) var(--sdFontSizes30) /
     var(--sdLineHeightLg) var(--sdFontsBase);
-  --sdTypographyBase2: var(--sdFontWeightsRegular) var(--sdFontSizes20) /
+  --base2: var(--sdFontWeightsRegular) var(--sdFontSizes20) /
     var(--sdLineHeightLg) var(--sdFontsBase);
-  --sdTypographyButton: var(--sdFontWeightMedium) var(--sdFontSizes30) /
+  --button: var(--sdFontWeightMedium) var(--sdFontSizes30) /
     var(--sdLineHeightSm) var(--sdFontsBase);
-  --sdTypographyCaption: var(--sdFontWeightsRegular) var(--sdFontSizes20) /
+  --caption: var(--sdFontWeightsRegular) var(--sdFontSizes20) /
     var(--sdLineHeightSm) var(--sdFontsBase);
-  --sdTypographyOverline: var(--sdFontWeightsBold) var(--sdFontSizes20) /
+  --overline: var(--sdFontWeightsBold) var(--sdFontSizes20) /
     var(--sdLineHeightSm) var(--sdFontsBase);
 }
