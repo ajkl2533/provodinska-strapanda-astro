@@ -10,12 +10,14 @@
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint 'src/**/*.{js,ts,jsx,tsx,astro}'",
-    "lint:fix": "eslint --fix 'src/**/*.{js,ts,jsx,tsx,astro}'"
+    "lint:fix": "eslint --fix 'src/**/*.{js,ts,jsx,tsx,astro}'",
+    "buildTokens": "node ./scripts/buildTokens2.js"
   },
   "dependencies": {
     "astro": "^2.0.14"
   },
   "devDependencies": {
+    "@tokens-studio/sd-transforms": "^0.4.4",
     "@typescript-eslint/eslint-plugin": "^5.53.0",
     "@typescript-eslint/parser": "^5.53.0",
     "eslint": "^8.34.0",
@@ -26,6 +28,7 @@
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "prettier": "^2.8.4",
     "prettier-plugin-astro": "^0.8.0",
+    "style-dictionary": "^3.7.2",
     "typescript": "^4.9.5"
   }
 }
