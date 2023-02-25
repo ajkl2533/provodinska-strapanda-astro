@@ -1,0 +1,37 @@
+---
+import { getCollection } from 'astro:content';
+import { getAnchor } from '../../configs/navigation';
+import SectionHeader from '../common/SectionHeader.astro';
+
+const anchor = getAnchor('tracks');
+const hikingTracks = await getCollection(
+  'tracks',
+  ({ data }) => data.type === 'hike'
+);
+const bikingTracks = await getCollection(
+  'tracks',
+  ({ data }) => data.type === 'bike'
+);
+---
+
+<section class="tracks" id={anchor}>
+  <SectionHeader title="Trasy pochodu" />
+  {
+    hikingTracks.map((track) => (
+      <article class="track">
+        <p>Pro pěší</p>
+        <h4>{track.data.length}&nbsp;km</h4>
+        <p>{track.body}</p>
+      </article>
+    ))
+  }
+  {
+    bikingTracks.map((track) => (
+      <article class="track">
+        <p>Pro cyklisty</p>
+        <h4>{track.data.length}&nbsp;km</h4>
+        <p>{track.body}</p>
+      </article>
+    ))
+  }
+</section>

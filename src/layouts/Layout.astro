@@ -1,6 +1,14 @@
 ---
-import '@fontsource/barlow-condensed';
-import '@fontsource/montserrat';
+import '@fontsource/barlow-condensed/latin-700.css';
+import '@fontsource/barlow-condensed/latin-ext-700.css';
+import '@fontsource/barlow-condensed/latin-400.css';
+import '@fontsource/barlow-condensed/latin-ext-400.css';
+import '@fontsource/montserrat/latin-700.css';
+import '@fontsource/montserrat/latin-ext-700.css';
+import '@fontsource/montserrat/latin-500.css';
+import '@fontsource/montserrat/latin-ext-500.css';
+import '@fontsource/montserrat/latin-400.css';
+import '@fontsource/montserrat/latin-ext-400.css';
 import '../styles/index.css';
 
 export interface Props {
@@ -20,25 +28,8 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <slot />
+    <main>
+      <slot />
+    </main>
   </body>
 </html>
-<style is:global>
-  :root {
-    --accent: 124, 58, 237;
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      #da62c4 30%,
-      white 60%
-    );
-  }
-  html {
-    font-family: 'Montserrat', system-ui, sans-serif;
-    background-color: var(--green900);
-  }
-  code {
-    font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-      DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-  }
-</style>

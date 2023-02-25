@@ -1,0 +1,13 @@
+---
+import { getAnchor } from '../../configs/navigation';
+
+const sectionAnchor = getAnchor('home');
+const tracksAnchor = getAnchor('tracks');
+---
+
+<section class="hero" id={sectionAnchor}>
+  <h1>PROVODÍNSKÁ ŠTRAPANDA 2023</h1>
+  <p>Sobota 17. června 2023</p>
+  <p>Sportovní areál u nádraží Jestřebí</p>
+  <a href={`#${tracksAnchor}`}>Prozkoumat trasy</a>
+</section>

@@ -1,0 +1,25 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { Picture } from '@astrojs/image/components';
+export interface Props {
+  entry: CollectionEntry<'history'>;
+}
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<article class="history-section">
+  <Picture
+    src={import(`../../assets/history/${entry.data.image.name}.jpg`)}
+    alt={entry.data.image.alt}
+    sizes="(max-width: 800px) 100vw, 800px"
+    widths={[200, 400, 800]}
+    aspectRatio={1}
+    background="#ffffff"
+    fit="cover"
+    position="center"
+  />
+  <p>{entry.data.overline}</p>
+  <h1>{entry.data.title}</h1>
+  <Content />
+</article>
