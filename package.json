@@ -14,16 +14,16 @@
     "buildTokens": "node ./scripts/buildTokens2.js"
   },
   "dependencies": {
+    "@astrojs/image": "^0.15.1",
     "@fontsource/barlow-condensed": "^4.5.9",
     "@fontsource/montserrat": "^4.5.14",
-    "astro": "^2.0.14"
+    "astro": "^2.0.15"
   },
   "devDependencies": {
     "@tokens-studio/sd-transforms": "^0.4.4",
     "@typescript-eslint/eslint-plugin": "^5.53.0",
     "@typescript-eslint/parser": "^5.53.0",
     "eslint": "^8.34.0",
-    "eslint-config-airbnb-base": "15.0.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-astro": "^0.23.0",
     "eslint-plugin-import": "^2.25.2",
