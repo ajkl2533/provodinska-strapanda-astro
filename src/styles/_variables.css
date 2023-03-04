@@ -1,14 +1,15 @@
 :root {
-  --space1x: 0.5rem;
-  --space2x: 1rem;
-  --space3x: 1.5rem;
-  --space4x: 2rem;
-  --space6x: 3rem;
-  --space8x: 4rem;
-  --space10x: 5rem;
-  --space12x: 6rem;
-  --space20x: 10rem;
-  --space30x: 15rem;
+  --s0: 0;
+  --s1: 0.5rem;
+  --s2: 1rem;
+  --s3: 1.5rem;
+  --s4: 2rem;
+  --s6: 3rem;
+  --s8: 4rem;
+  --s10: 5rem;
+  --s12: 6rem;
+  --s20: 10rem;
+  --s30: 15rem;
 
   --green50: #ebf2b3;
   --green100: #c3d98c;
@@ -45,20 +46,26 @@
 
   --fontBase: Montserrat;
   --fontHeading: 'Barlow Condensed';
+  --fontFamilyBase: var(--fontBase), -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol';
+  --fontFamilyHeading: var(--fontHeading), -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol';
 
   --fontWeightsRegular: 400;
   --fontWeightsMedium: 500;
   --fontWeightsBold: 700;
 
-  --fontSizes20: 0.875rem;
-  --fontSizes30: 1rem;
-  --fontSizes40: 1.125rem;
-  --fontSizes50: 1.25rem;
-  --fontSizes60: 1.5rem;
-  --fontSizes70: 2rem;
-  --fontSizes80: 3rem;
-  --fontSizes90: 4rem;
-  --fontSizes100: 6rem;
+  --fontSizes20: clamp(0.75rem, 0.221vw + 0.698rem, 0.875rem);
+  --fontSizes30: clamp(0.875rem, 0.221vw + 0.823rem, 1rem);
+  --fontSizes40: clamp(0.875rem, 0.442vw + 0.771rem, 1.125rem);
+  --fontSizes50: clamp(1rem, 0.442vw + 0.896rem, 1.25rem);
+  --fontSizes60: clamp(1.125rem, 0.663vw + 0.97rem, 1.5rem);
+  --fontSizes70: clamp(1.25rem, 1.326vw + 0.939rem, 2rem);
+  --fontSizes80: clamp(1.5rem, 2.652vw + 0.878rem, 3rem);
+  --fontSizes90: clamp(2rem, 3.536vw + 1.171rem, 4rem);
+  --fontSizes100: clamp(3rem, 5.304vw + 1.757rem, 6rem);
 
   --letterSpacingsXxs: -1.5px;
   --letterSpacingsXs: -0.5px;
@@ -79,30 +86,16 @@
   --shadow: 0 0 0 0 #00000026, 3 4 11 0 #00000026, 11 18 21 0 #00000021,
     24 40 28 0 #00000014, 43 70 33 0 #00000005, 67 110 36 0 #00000000;
 
-  --headline1: var(--sdFontWeightsBold) var(--sdFontSizes100) /
-    var(--sdLineHeightMd) var(--sdFontsHeading);
-  --headline1Condensed: var(--sdFontWeightsBold) var(--sdFontSizes100) /
-    var(--sdLineHeightSm) 1 var(--sdFontsHeading);
-  --headline2: var(--sdFontWeightsBold) var(--sdFontSizes90) /
-    var(--sdLineHeightMd) var(--sdFontsHeading);
-  --headline3: var(--sdFontWeightsRegular) var(--sdFontSizes80) /
-    var(--sdLineHeightMd) var(--sdFontsHeading);
-  --headline4: var(--sdFontWeightsRegular) var(--sdFontSizes70) /
-    var(--sdLineHeightMd) var(--sdFontsHeading);
-  --headline5: var(--sdFontWeightsRegular) var(--sdFontSizes60) /
-    var(--sdLineHeightMd) var(--sdFontsHeading);
-  --headline6: var(--sdFontWeightsRegular) var(--sdFontSizes50) /
-    var(--sdLineHeightMd) var(--sdFontsHeading);
-  --subtitle: var(--sdFontWeightsRegular) var(--sdFontSizes40) /
-    var(--sdLineHeightMd) var(--sdFontsHeading);
-  --body1: var(--sdFontWeightsRegular) var(--sdFontSizes30) /
-    var(--sdLineHeightLg) var(--sdFontsBase);
-  --base2: var(--sdFontWeightsRegular) var(--sdFontSizes20) /
-    var(--sdLineHeightLg) var(--sdFontsBase);
-  --button: var(--sdFontWeightMedium) var(--sdFontSizes30) /
-    var(--sdLineHeightSm) var(--sdFontsBase);
-  --caption: var(--sdFontWeightsRegular) var(--sdFontSizes20) /
-    var(--sdLineHeightSm) var(--sdFontsBase);
-  --overline: var(--sdFontWeightsBold) var(--sdFontSizes20) /
-    var(--sdLineHeightSm) var(--sdFontsBase);
+  --transition: 300ms;
+
+  --colorBackground: var(--green900);
+  --colorText: white;
+  --colorAccent: var(--brown300);
+
+  --interactionPrimaryColor: var(--brown300);
+  --interactionPrimaryColorContrast: var(--brown900);
+  --interactionPrimaryColorHover: var(--brown200);
+  --interactionPrimaryColorFocus: var(--brown200);
+  --interactionPrimaryColorActive: var(--brown200);
+  --interactionPrimaryOutline: var(--brown50);
 }

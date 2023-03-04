@@ -1,0 +1,127 @@
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-family: var(--fontFamilyHeading);
+  line-height: var(--lineHeightsMd);
+}
+
+h1,
+.h1,
+h2,
+.h2 {
+  font-weight: var(--fontWeightsBold);
+}
+
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-weight: var(--fontWeightsRegular);
+}
+
+h1,
+.h1 {
+  font-size: var(--fontSizes100);
+  letter-spacing: var(--letterSpacingsXxs);
+}
+h2,
+.h2 {
+  font-size: var(--fontSizes90);
+  letter-spacing: var(--letterSpacingsXs);
+}
+h3,
+.h3 {
+  font-size: var(--fontSizes80);
+}
+h4,
+.h4 {
+  font-size: var(--fontSizes70);
+}
+h5,
+.h5 {
+  font-size: var(--fontSizes60);
+}
+h6,
+.h6 {
+  font-size: var(--fontSizes50);
+  letter-spacing: var(--letterSpacingsSm);
+}
+
+p,
+.text-base {
+  font-size: var(--fontSizes30);
+  line-height: var(--lineHeightsLg);
+}
+
+.text-base-sm {
+  font-size: var(--fontSizes20);
+  line-height: var(--lineHeightsLg);
+}
+
+a,
+.link {
+  font-weight: var(--fontWeightsMedium);
+  font-size: var(--fontSizes30);
+  line-height: var(--lineHeightsSm);
+  text-transform: uppercase;
+  letter-spacing: var(--letterSpacingsXl);
+  text-decoration: none;
+  color: var(interactionPrimaryColor);
+}
+
+a:hover,
+.link:hover {
+  color: var(--interactionPrimaryColorHover);
+  text-decoration: underline;
+}
+a:focus-within,
+.link:focus-within {
+  color: var(--interactionPrimaryColorFocus);
+  text-decoration: underline;
+}
+a:active,
+.link:active {
+  color: var(--interactionPrimaryColorActive);
+}
+
+.overline {
+  font-weight: var(--fontWeightsBold);
+  font-size: var(--fontSizes20);
+  line-height: var(--lineHeightSm);
+  text-transform: uppercase;
+  letter-spacing: var(--letterSpacingsXl);
+  color: var(--colorAccent);
+}
+.caption {
+  font-size: var(--fontSizes20);
+  line-height: var(--lineHeightsSm);
+  text-transform: uppercase;
+  letter-spacing: var(--letterSpacingsLg);
+}
+
+/* --- Utility classes --- */
+.text-condensed {
+  line-height: var(--lineHeightsSm);
+}
+.text-color-accent {
+  color: var(--colorAccent);
+}
+.text-align-right {
+  text-align: right;
+}
+.text-align-center {
+  text-align: center;
+}

@@ -1,0 +1,32 @@
+body {
+  font-family: var(--fontFamilyBase);
+  font-weight: var(--fontWeightsRegular);
+  font-size: var(--fontSize30);
+  line-height: var(--lineHeightSm);
+  color: var(--colorText);
+  background-color: var(--colorBackground);
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+figcaption {
+  overflow-wrap: break-word;
+  max-inline-size: 60ch;
+}
+
+@supports (padding: max(0px)) {
+  body {
+    padding-left: min(0vmin, env(safe-area-inset-left));
+    padding-right: min(0vmin, env(safe-area-inset-right));
+  }
+}
+
+main {
+  padding-left: env(safe-area-inset-left); /* Apply safe area */
+  padding-right: env(safe-area-inset-right);
+}
