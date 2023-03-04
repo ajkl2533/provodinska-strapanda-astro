@@ -12,7 +12,11 @@ const tracksAnchor = getAnchor('tracks');
 ---
 
 <section class="hero" id={sectionAnchor}>
-  <BackgroundPicture src="src/assets/background.jpg" objectFit="cover">
+  <BackgroundPicture
+    src="src/assets/background.jpg"
+    objectFit="cover"
+    breakpoints={[375, 768, 1024, 1440, 1920]}
+  >
     <Cover>
       <Stack gutter={'s12'} justify="center" slot="center">
         <Switcher gutter={'s8'} threshold="60rem" class="headline">
