@@ -1,13 +1,84 @@
 ---
 import { getAnchor } from '../../configs/navigation';
+import Cover from '../common/Cover.astro';
+import CTA from '../common/CTA.astro';
+import Scroller from '../common/Scroller.astro';
+import Stack from '../common/Stack.astro';
+import Switcher from '../common/Switcher.astro';
 
 const sectionAnchor = getAnchor('home');
 const tracksAnchor = getAnchor('tracks');
 ---
 
 <section class="hero" id={sectionAnchor}>
-  <h1>PROVODÍNSKÁ ŠTRAPANDA 2023</h1>
-  <p>Sobota 17. června 2023</p>
-  <p>Sportovní areál u nádraží Jestřebí</p>
-  <a href={`#${tracksAnchor}`}>Prozkoumat trasy</a>
+  <Cover>
+    <Stack gutter={'s12'} justify="center" slot="center">
+      <Switcher gutter={'s8'} threshold="60rem" class="headline">
+        <h1 class="title-main text-condensed">
+          PROVODÍNSKÁ ŠTRAPANDA <span class="text-color-accent">2023</span>
+        </h1>
+        <div class="separator" aria-hidden></div>
+        <Stack gutter={'s1'} class="event-data">
+          <p class="h2">Sobota 17.&nbsp;června 2023</p>
+          <p class="h3">Sportovní areál u&nbsp;nádraží Jestřebí</p>
+        </Stack>
+      </Switcher>
+      <CTA href={`#${tracksAnchor}`}>Prozkoumat trasy</CTA>
+    </Stack>
+    <Scroller slot="bottom" />
+  </Cover>
 </section>
+
+<style>
+  :root {
+    --titleTextAlign: center;
+    --separatorHeight: 1px;
+    --separatorWidth: auto;
+    --separatorBasis: 5rem;
+    --separatorDisplay: none;
+    --eventDataAlign: center;
+    --eventDataTextAlign: center;
+  }
+
+  @media screen and (min-width: 64rem) {
+    :root {
+      --titleTextAlign: right;
+      --separatorHeight: 5rem;
+      --separatorWidth: auto;
+      --separatorBasis: 1px;
+      --separatorDisplay: block;
+      --eventDataAlign: flex-start;
+      --eventDataTextAlign: left;
+    }
+  }
+
+  .hero {
+    background-image: url('../../assets/background.jpg');
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: screen;
+    background-attachment: fixed;
+  }
+
+  .headline {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .title-main {
+    text-align: var(--titleTextAlign);
+  }
+  .event-data {
+    align-items: var(--eventDataAlign);
+    text-align: var(--eventDataTextAlign);
+  }
+
+  .separator {
+    display: var(--separatorDisplay);
+    flex-basis: var(--separatorBasis);
+    height: var(--separatorHeight);
+    width: var(--separatorWidth);
+    flex-grow: 0;
+    background: var(--colorAccent);
+  }
+</style>
