@@ -2,12 +2,36 @@
 export interface Props {
   title: string;
   subtitle?: string;
+  id?: string;
 }
 
-const { title, subtitle } = Astro.props;
+const { title, subtitle, id } = Astro.props;
 ---
 
-<header class="section-header">
-  <h2>{title}</h2>
-  {subtitle && <p class="subtitle">{subtitle}</p>}
+<header class="section-header" id={id}>
+  <h2 class="title">{title}</h2>
+  {subtitle && <p class="subtitle text-base-sm">{subtitle}</p>}
 </header>
+
+<style>
+  .section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--s2);
+  }
+  .title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--s1);
+  }
+  .title::before {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 3rem;
+    background-color: var(--colorAccent);
+  }
+</style>

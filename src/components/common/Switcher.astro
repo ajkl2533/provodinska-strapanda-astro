@@ -6,8 +6,14 @@ export interface Props {
   threshold?: string;
   class?: string;
   children: unknown;
+  justify?: string;
 }
-const { gutter = 's4', threshold = '30rem', class: className } = Astro.props;
+const {
+  gutter = 's4',
+  threshold = '30rem',
+  class: className,
+  justify = 'flex-start',
+} = Astro.props;
 
 const cssGutter = `var(--${gutter})`;
 ---
@@ -16,11 +22,12 @@ const cssGutter = `var(--${gutter})`;
   <slot />
 </div>
 
-<style define:vars={{ gutter: cssGutter, threshold }}>
+<style define:vars={{ gutter: cssGutter, threshold, justify }}>
   .switcher {
     display: flex;
     flex-wrap: wrap;
     gap: var(--gutter);
+    justify-content: var(--justify);
   }
 
   .switcher > :global(*) {

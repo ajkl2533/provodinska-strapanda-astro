@@ -30,3 +30,8 @@ main {
   padding-left: env(safe-area-inset-left); /* Apply safe area */
   padding-right: env(safe-area-inset-right);
 }
+
+.stack {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,38 @@
+---
+export interface Props {
+  children: unknown;
+  className?: string;
+}
+
+const { className } = Astro.props;
+---
+
+<section class:list={['section', 'stack', className]}>
+  <slot />
+</section>
+
+<style>
+  :root {
+    --sectionPadding: var(--s6) var(--s4);
+    --sectionGap: var(--s4);
+  }
+  @media screen and (min-width: 48rem) {
+    :root {
+      --sectionPadding: var(--s10) var(--s6);
+      --sectionGap: var(--s6);
+    }
+  }
+  @media screen and (min-width: 80rem) {
+    :root {
+      --sectionPadding: var(--s16) var(--s8);
+      --sectionGap: var(--s8);
+    }
+  }
+
+  .section {
+    padding: var(--sectionPadding);
+    gap: var(--sectionGap);
+    max-width: 90rem;
+    margin: 0 auto;
+  }
+</style>

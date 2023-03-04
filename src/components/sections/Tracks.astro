@@ -1,7 +1,10 @@
 ---
 import { getCollection } from 'astro:content';
 import { getAnchor } from '../../configs/navigation';
+import Section from '../common/Section.astro';
 import SectionHeader from '../common/SectionHeader.astro';
+import Switcher from '../common/Switcher.astro';
+import Track from '../common/Track.astro';
 
 const anchor = getAnchor('tracks');
 const hikingTracks = await getCollection(
@@ -14,24 +17,36 @@ const bikingTracks = await getCollection(
 );
 ---
 
-<section class="tracks" id={anchor}>
-  <SectionHeader title="Trasy pochodu" />
-  {
-    hikingTracks.map((track) => (
-      <article class="track">
-        <p>Pro pěší</p>
-        <h4>{track.data.length}&nbsp;km</h4>
-        <p>{track.body}</p>
-      </article>
-    ))
+<Section>
+  <SectionHeader title="Trasy pochodu" id={anchor} />
+  <Switcher threshold="48rem" gutter="s4" justify="center">
+    {
+      hikingTracks.map((track) => (
+        <Track
+          length={track.data.length}
+          type={track.data.type}
+          description={track.body}
+        />
+      ))
+    }
+  </Switcher>
+  <div class="tracks-bike stack">
+    <h3 class="text-align-center">Cyklotrasy</h3>
+    <Switcher threshold="48rem" gutter="s4" justify="center">
+      {
+        bikingTracks.map((track) => (
+          <Track
+            length={track.data.length}
+            type={track.data.type}
+            description={track.body}
+          />
+        ))
+      }
+    </Switcher>
+  </div>
+</Section>
+<style>
+  .tracks-bike {
+    gap: var(--s4);
   }
-  {
-    bikingTracks.map((track) => (
-      <article class="track">
-        <p>Pro cyklisty</p>
-        <h4>{track.data.length}&nbsp;km</h4>
-        <p>{track.body}</p>
-      </article>
-    ))
-  }
-</section>
+</style>

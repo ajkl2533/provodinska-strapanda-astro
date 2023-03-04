@@ -7,15 +7,19 @@ export interface Props {
   align?: string;
   class?: string;
   children: unknown;
+  as?: string;
+  id?: string;
 }
 const {
   gutter = 's4',
   justify = 'flex-start',
   align = 'flex-start',
+  as = 'div',
   class: className,
 } = Astro.props;
 
 const cssGutter = `var(--${gutter})`;
+const Element = as;
 ---
 
 <div class:list={['stack', className]}>
@@ -24,8 +28,6 @@ const cssGutter = `var(--${gutter})`;
 
 <style define:vars={{ gutter: cssGutter, justify, align }}>
   .stack {
-    display: flex;
-    flex-direction: column;
     justify-content: var(--align);
     align-items: var(--justify);
     gap: var(--gutter);

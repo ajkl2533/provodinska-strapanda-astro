@@ -34,20 +34,23 @@ const { href } = Astro.props;
     transition: all var(--transition);
     opacity: 0.3;
   }
-  @media (hover: hover) {
-    .button-cta:hover {
-      background-color: var(--interactionPrimaryColorHover);
-    }
-    .button-cta:hover::before {
-      left: 100%;
-    }
+  .button-cta:hover {
+    background-color: var(--interactionPrimaryColorHover);
+    color: var(--interactionPrimaryColorContrast);
+    text-decoration: none;
+  }
+  .button-cta:hover::before {
+    left: 100%;
   }
   .button-cta:focus-visible {
     outline: 4px solid var(--interactionPrimaryOutline);
     outline-offset: 0;
     background-color: var(--interactionPrimaryColorFocus);
+    color: var(--interactionPrimaryColorContrast);
+    text-decoration: none;
   }
   .button-cta:active {
     background-color: var(--interactionPrimaryColorActive);
+    color: var(--interactionPrimaryColorContrast);
   }
 </style>

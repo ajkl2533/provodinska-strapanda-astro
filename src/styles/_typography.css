@@ -87,8 +87,8 @@ a:hover,
   color: var(--interactionPrimaryColorHover);
   text-decoration: underline;
 }
-a:focus-within,
-.link:focus-within {
+a:focus-visible,
+.link:focus-visible {
   color: var(--interactionPrimaryColorFocus);
   text-decoration: underline;
 }

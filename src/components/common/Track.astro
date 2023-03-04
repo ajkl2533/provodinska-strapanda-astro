@@ -1,0 +1,39 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+export interface Props {
+  length: CollectionEntry<'tracks'>['data']['length'];
+  type: CollectionEntry<'tracks'>['data']['type'];
+  description: CollectionEntry<'tracks'>['body'];
+}
+
+const { length, type, description } = Astro.props;
+
+const backgroundPattern = `url('src/assets/${type}.svg')`;
+---
+
+<article class="track stack">
+  <header class="track-header stack">
+    <p class="overline">{type === 'hike' ? 'Pro pěší' : 'Pro cyklisty'}</p>
+    <h4 class="h3">{length}&nbsp;km</h4>
+  </header>
+  <p>{description}</p>
+</article>
+
+<style define:vars={{ pattern: backgroundPattern }}>
+  .track {
+    gap: var(--s4);
+    background-image: var(--pattern),
+      linear-gradient(180deg, var(--green700) 0%, var(--green800) 100%);
+    background-blend-mode: soft-light;
+    background-size: 250%;
+    background-position: center;
+    border-radius: var(--radiiLg);
+    box-shadow: var(--shadow);
+    padding: var(--s4);
+    max-width: 26rem;
+  }
+  .track-header {
+    gap: var(--s1);
+  }
+</style>
