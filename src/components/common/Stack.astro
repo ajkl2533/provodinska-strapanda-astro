@@ -1,0 +1,37 @@
+---
+import type { Space } from '../../types/variables';
+
+export interface Props {
+  gutter?: Space;
+  justify?: string;
+  align?: string;
+  class?: string;
+  children: unknown;
+}
+const {
+  gutter = 's4',
+  justify = 'flex-start',
+  align = 'flex-start',
+  class: className,
+} = Astro.props;
+
+const cssGutter = `var(--${gutter})`;
+---
+
+<div class:list={['stack', className]}>
+  <slot />
+</div>
+
+<style define:vars={{ gutter: cssGutter, justify, align }}>
+  .stack {
+    display: flex;
+    flex-direction: column;
+    justify-content: var(--align);
+    align-items: var(--justify);
+    gap: var(--gutter);
+  }
+
+  .stack > :global(*) {
+    margin-block: 0;
+  }
+</style>

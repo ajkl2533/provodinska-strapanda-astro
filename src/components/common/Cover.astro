@@ -1,0 +1,51 @@
+---
+import type { Space } from '../../types/variables';
+
+export interface Props {
+  gutter?: Space;
+  padding?: Space;
+  minHeight?: string;
+  class?: string;
+  children: unknown;
+}
+const {
+  gutter = 's4',
+  padding = 's4',
+  minHeight = '100vh',
+  class: className,
+} = Astro.props;
+
+const cssGutter = `var(--${gutter})`;
+const cssPadding = `var(--${padding})`;
+---
+
+<div class:list={['cover', className]}>
+  <slot name="top" />
+  <div class="cover-center"><slot name="center" /></div>
+  <slot name="bottom" />
+</div>
+
+<style define:vars={{ gutter: cssGutter, padding: cssPadding, minHeight }}>
+  .cover {
+    display: flex;
+    flex-direction: column;
+    min-block-size: var(--minHeight);
+    padding: var(--padding);
+  }
+
+  .cover > :global(*) {
+    margin-block: var(--gutter);
+  }
+
+  .cover > :global(:first-child:not(.cover-center)) {
+    margin-block-start: 0;
+  }
+
+  .cover > :global(:last-child:not(.cover-center)) {
+    margin-block-end: 0;
+  }
+
+  .cover > :global(.cover-center) {
+    margin-block: auto;
+  }
+</style>

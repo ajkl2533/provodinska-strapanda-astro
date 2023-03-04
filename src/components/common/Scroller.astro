@@ -1,0 +1,69 @@
+---
+---
+
+<div aria-hidden class="scroller text-align-center caption">Skroluj dolů</div>
+
+<style>
+  :root {
+    --scrollerWidth: 1rem;
+    --scrollerHeight: 2rem;
+    --scrollerBulletWidth: 0.5rem;
+    --scrollerBulletHeight: 0.5rem;
+    --scrollerBulletPositionTop: 0.25rem;
+    --scrollerBulletPositionBottom: 1.25rem;
+  }
+
+  @media screen and (min-width: 64rem) {
+    :root {
+      --scrollerWidth: 1.5rem;
+      --scrollerHeight: 3rem;
+      --scrollerBulletWidth: 1rem;
+      --scrollerBulletHeight: 1rem;
+      --scrollerBulletPositionTop: 0.25rem;
+      --scrollerBulletPositionBottom: 1.75rem;
+    }
+  }
+
+  .scroller {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--s2);
+  }
+  .scroller::before {
+    content: '';
+    display: block;
+    width: var(--scrollerWidth);
+    height: var(--scrollerHeight);
+    border: 2px solid white;
+    border-radius: 999em;
+  }
+  .scroller::after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: var(--scrollerBulletWidth);
+    height: var(--scrollerBulletHeight);
+    background-color: white;
+    border-radius: 100%;
+    animation: fade-move-down 2.5s ease-in-out infinite;
+  }
+
+  @-webkit-keyframes fade-move-down {
+    0% {
+      top: var(--scrollerBulletPositionTop);
+      opacity: 0;
+    }
+    33% {
+      opacity: 1;
+    }
+    66% {
+      top: var(--scrollerBulletPositionBottom);
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+</style>

@@ -1,0 +1,30 @@
+---
+import type { Space } from '../../types/variables';
+
+export interface Props {
+  gutter?: Space;
+  threshold?: string;
+  class?: string;
+  children: unknown;
+}
+const { gutter = 's4', threshold = '30rem', class: className } = Astro.props;
+
+const cssGutter = `var(--${gutter})`;
+---
+
+<div class:list={['switcher', className]}>
+  <slot />
+</div>
+
+<style define:vars={{ gutter: cssGutter, threshold }}>
+  .switcher {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gutter);
+  }
+
+  .switcher > :global(*) {
+    flex-grow: 1;
+    flex-basis: calc(((var(--threshold)-1px) - 100%) * 999);
+  }
+</style>

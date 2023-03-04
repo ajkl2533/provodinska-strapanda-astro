@@ -1,0 +1,53 @@
+---
+export interface Props {
+  href: string;
+  children: unknown;
+}
+
+const { href } = Astro.props;
+---
+
+<a class="button-cta" href={href}><slot /></a>
+
+<style>
+  .button-cta {
+    padding: clamp(1rem, 5.229vw + -0.225rem, 1.5rem)
+      clamp(1.5rem, 15.686vw + -2.176rem, 3rem);
+    font-size: var(--fontSizes40);
+    color: var(--interactionPrimaryColorContrast);
+    background-color: var(--interactionPrimaryColor);
+    border-radius: var(--radiiLg);
+    position: relative;
+    overflow: hidden;
+    transition: background-color var(--transition);
+    text-align: center;
+  }
+  .button-cta::before {
+    content: '';
+    position: absolute;
+    height: 13em;
+    width: 4em;
+    background: #fff;
+    left: -8em;
+    top: -4em;
+    transform: rotate(45deg);
+    transition: all var(--transition);
+    opacity: 0.3;
+  }
+  @media (hover: hover) {
+    .button-cta:hover {
+      background-color: var(--interactionPrimaryColorHover);
+    }
+    .button-cta:hover::before {
+      left: 100%;
+    }
+  }
+  .button-cta:focus-visible {
+    outline: 4px solid var(--interactionPrimaryOutline);
+    outline-offset: 0;
+    background-color: var(--interactionPrimaryColorFocus);
+  }
+  .button-cta:active {
+    background-color: var(--interactionPrimaryColorActive);
+  }
+</style>
