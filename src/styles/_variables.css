@@ -46,12 +46,9 @@
 
   --fontBase: Montserrat;
   --fontHeading: 'Barlow Condensed';
-  --fontFamilyBase: var(--fontBase), -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol';
-  --fontFamilyHeading: var(--fontHeading), -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol';
+  --fontFamilyBase: var(--fontBase), Verdana, Helvetica, Arial, sans-serif;
+  --fontFamilyHeading: var(--fontHeading), 'Arial Narrow', Helvetica, Arial,
+    sans-serif;
 
   --fontWeightsRegular: 400;
   --fontWeightsMedium: 500;
@@ -98,4 +95,14 @@
   --interactionPrimaryColorFocus: var(--brown200);
   --interactionPrimaryColorActive: var(--brown200);
   --interactionPrimaryOutline: var(--brown50);
+}
+
+.heading-fallback {
+  font-size: 46px;
+  line-height: 1.7;
+  letter-spacing: -1.85px;
+  font-weight: 700;
+  visibility: visible;
+  word-spacing: -2px;
+  font-family: 'arial narrow';
 }
