@@ -1,4 +1,5 @@
 ---
+import { BackgroundPicture } from 'astro-imagetools/components';
 import { getAnchor } from '../../configs/navigation';
 import Cover from '../common/Cover.astro';
 import CTA from '../common/CTA.astro';
@@ -11,22 +12,24 @@ const tracksAnchor = getAnchor('tracks');
 ---
 
 <section class="hero" id={sectionAnchor}>
-  <Cover>
-    <Stack gutter={'s12'} justify="center" slot="center">
-      <Switcher gutter={'s8'} threshold="60rem" class="headline">
-        <h1 class="title-main text-condensed">
-          PROVODÍNSKÁ ŠTRAPANDA <span class="text-color-accent">2023</span>
-        </h1>
-        <div class="separator"></div>
-        <Stack gutter={'s1'} class="event-data">
-          <p class="h2">Sobota 17.&nbsp;června 2023</p>
-          <p class="h3">Sportovní areál u&nbsp;nádraží Jestřebí</p>
-        </Stack>
-      </Switcher>
-      <CTA href={`#${tracksAnchor}`}>Prozkoumat trasy</CTA>
-    </Stack>
-    <Scroller slot="bottom" />
-  </Cover>
+  <BackgroundPicture src="src/assets/background.jpg" objectFit="cover">
+    <Cover>
+      <Stack gutter={'s12'} justify="center" slot="center">
+        <Switcher gutter={'s8'} threshold="60rem" class="headline">
+          <h1 class="title-main text-condensed">
+            PROVODÍNSKÁ ŠTRAPANDA <span class="text-color-accent">2023</span>
+          </h1>
+          <div class="separator"></div>
+          <Stack gutter={'s1'} class="event-data">
+            <p class="h2">Sobota 17.&nbsp;června 2023</p>
+            <p class="h3">Sportovní areál u&nbsp;nádraží Jestřebí</p>
+          </Stack>
+        </Switcher>
+        <CTA href={`#${tracksAnchor}`}>Prozkoumat trasy</CTA>
+      </Stack>
+      <Scroller slot="bottom" />
+    </Cover>
+  </BackgroundPicture>
 </section>
 
 <style>
@@ -52,13 +55,13 @@ const tracksAnchor = getAnchor('tracks');
     }
   }
 
-  .hero {
+  /* .hero {
     background-image: url('../../assets/background.jpg');
     background-position: center;
     background-size: cover;
     background-blend-mode: screen;
     background-attachment: fixed;
-  }
+  } */
 
   .headline {
     align-items: center;
