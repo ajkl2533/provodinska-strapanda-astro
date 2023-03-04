@@ -6,6 +6,9 @@ module.exports = {
     'plugin:astro/recommended',
     'plugin:astro/jsx-a11y-recommended',
   ],
+  rules: [
+    "@typescript-eslint/triple-slash-reference": "off"
+  ],
   overrides: [
     {
       files: ['*.astro'],
