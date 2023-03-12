@@ -14,12 +14,10 @@ const {
   gutter = 's4',
   justify = 'flex-start',
   align = 'flex-start',
-  as = 'div',
   class: className,
 } = Astro.props;
 
 const cssGutter = `var(--${gutter})`;
-const Element = as;
 ---
 
 <div class:list={['stack', className]}>
