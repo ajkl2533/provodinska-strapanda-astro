@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import { Picture } from '@astrojs/image/components';
+import Stack from './Stack.astro';
+import { Picture } from 'astro-imagetools/components';
 export interface Props {
   entry: CollectionEntry<'history'>;
 }
@@ -9,17 +10,96 @@ const { Content } = await entry.render();
 ---
 
 <article class="history-section">
+  <div class="history-section-block stack">
+    <header class="history-section-header">
+      <p class="overline">{entry.data.overline}</p>
+      <h3>{entry.data.title}</h3>
+    </header>
+    <Stack gutter="s2">
+      <Content />
+    </Stack>
+  </div>
   <Picture
-    src={import(`../../assets/history/${entry.data.image.name}.jpg`)}
+    src={`/src/assets/history/${entry.data.image.name}.jpg`}
     alt={entry.data.image.alt}
-    sizes="(max-width: 800px) 100vw, 800px"
-    widths={[200, 400, 800]}
-    aspectRatio={1}
-    background="#ffffff"
-    fit="cover"
-    position="center"
+    sizes="(max-width: 480px) 100vw, 480px"
+    aspect={1}
+    w={480}
+    h={480}
+    fadeInTransition={false}
   />
-  <p>{entry.data.overline}</p>
-  <h1>{entry.data.title}</h1>
-  <Content />
 </article>
+
+<style>
+  :root {
+    --overlineGap: var(--s1);
+    --overlineLineWidth: 1.5rem;
+    --sectionDirection: column;
+    --sectionEvenDirection: column;
+    --sectionGap: var(--s2);
+    --sectionCounterDisplay: none;
+    --sectionAlign: flex-start;
+  }
+  @media screen and (min-width: 40rem) {
+    :root {
+      --sectionDirection: row;
+      --sectionEvenDirection: row-reverse;
+      --sectionGap: var(--s8);
+      --sectionCounterDisplay: block;
+    }
+  }
+  @media screen and (min-width: 48rem) {
+    :root {
+      --sectionAlign: center;
+    }
+  }
+
+  :global(.history-section) {
+    counter-increment: history;
+  }
+  :global(.history-section:nth-of-type(2n)) {
+    flex-direction: var(--sectionEvenDirection);
+  }
+  .history-section {
+    display: flex;
+    flex-direction: var(--sectionDirection);
+    gap: var(--sectionGap);
+    justify-content: center;
+    align-items: var(--sectionAlign);
+  }
+  .history-section :global(.astro-imagetools-picture img) {
+    border-radius: var(--radiiLg);
+    box-shadow: var(--shadow);
+    max-width: 30rem;
+  }
+  .history-section-block {
+    gap: var(--s2);
+  }
+  .history-section-header {
+    position: relative;
+  }
+  .history-section-header::before {
+    content: '0' counter(history);
+    font-family: var(--fontFamilyHeading);
+    font-size: 192px;
+    letter-spacing: -0.5px;
+    font-weight: 700;
+    opacity: 0.1;
+    position: absolute;
+    top: -128px;
+    left: -100px;
+    display: var(--sectionCounterDisplay);
+  }
+  .history-section-header .overline {
+    display: flex;
+    gap: var(--overlineGap);
+    align-items: center;
+  }
+  .history-section-header .overline::before {
+    content: '';
+    display: block;
+    height: 1px;
+    width: var(--overlineLineWidth);
+    background-color: var(--colorAccent);
+  }
+</style>

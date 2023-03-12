@@ -3,12 +3,34 @@ import { getCollection } from 'astro:content';
 import { getAnchor } from '../../configs/navigation';
 import SectionHeader from '../common/SectionHeader.astro';
 import HistorySection from '../common/HistorySection.astro';
+import Section from '../common/Section.astro';
 
 const anchor = getAnchor('history');
 const blocks = await getCollection('history');
 ---
 
-<section class="history" id={anchor}>
-  <SectionHeader title="Z historie pochodu" />
-  {blocks.map((block) => <HistorySection entry={block} />)}
-</section>
+<Section>
+  <SectionHeader id={anchor} title="Z historie pochodu" />
+  <div class="history-stack stack">
+    {blocks.map((block) => <HistorySection entry={block} />)}
+  </div>
+</Section>
+
+<style>
+  :root {
+    --historyStackGap: var(--s10);
+  }
+  @media screen and (min-width: 40rem) {
+    :root {
+      --historyStackGap: var(--s16);
+    }
+  }
+  @media screen and (min-width: 48rem) {
+    :root {
+      --historyStackGap: var(--s20);
+    }
+  }
+  .history-stack {
+    gap: var(--historyStackGap);
+  }
+</style>
