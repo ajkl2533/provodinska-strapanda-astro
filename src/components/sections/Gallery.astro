@@ -2,80 +2,128 @@
 import { Picture } from 'astro-imagetools/components';
 import Section from '../common/Section.astro';
 import SectionHeader from '../common/SectionHeader.astro';
+
+const images = [
+  [
+    {
+      original: {
+        href: 'https://lh3.googleusercontent.com/pw/AMWts8CRtL_KZDxLrq5bYUu_3bPwZWJqMQQdp9xPRctj3Jty4FpWFuHeia6lVRyYnw1BUPpopkM788EMCWSWNQ8syxiB_qfq1YiIgv1DkgFqC1Llwq64Yzf3iiFnkG_XgVRDNSgNmyWTVm39IW0Uzr9Cylj7=w812-h1212-no',
+        width: 812,
+        height: 1212,
+      },
+      thumbnail: {
+        width: 264,
+        height: 480,
+        src: '/src/assets/gallery/gal01.jpg',
+        alt: 'Kontrolní bod na Husí cestě',
+      },
+    },
+  ],
+  [
+    {
+      original: {
+        href: 'https://lh3.googleusercontent.com/pw/AMWts8CjyL-qTjF7z8gJlGtJmd6oWfgbRzR0_GNxy6CL7o8G7M8-GSyeTIisg-SLFgnvR907cHepAlb7vGvqNTdj6jsUDYdPS9MM2WAs58qinwxhEs4mQR8_TWj3ZEaididYdAFDGSjVrtGQOz5N69YinZMN=w812-h1212-no',
+        width: 812,
+        height: 1212,
+      },
+      thumbnail: {
+        width: 264,
+        height: 384,
+        src: '/src/assets/gallery/gal02.jpg',
+        alt: 'Výlet do Saského Švýcarska - Kurort Rathen',
+      },
+    },
+    {
+      original: {
+        href: 'https://lh3.googleusercontent.com/pw/AMWts8A_DnPklK_urqq3ywE3KXoFl9kgqGOGNP4hrA3PuWeRGLEw5QgmEVrKeSScqDLiHaZT_07epZuM6vYClDCe1-sOUiG-WV-4mdQqNfjV0Xk4lSuV2nsthJq0AZhGcoCLDGTBaW6EnE3ALl_ZypTgUzB1=w869-h1200-no',
+        width: 869,
+        height: 1200,
+      },
+      thumbnail: {
+        width: 264,
+        height: 384,
+        src: '/src/assets/gallery/gal03.jpg',
+        alt: 'Propozice Provodínské Štrapandy z roku 1982',
+      },
+    },
+  ],
+  [
+    {
+      original: {
+        href: 'https://lh3.googleusercontent.com/pw/AMWts8BqUFNc0M9CzIgwSX3elotbkB6l6T0NEozFVBGsujdfXRAmK4z_fXdHFtpCJBujfOAkrWiThIia2Xe9DL1GBzCfZ4PXMmxRzYJTLPT5Uysx8gz5JGdNi3l9H9cwXi3Wo0QBqwJuguyV_hz03H0jRq-3=w1212-h812-no',
+        width: 1212,
+        height: 812,
+      },
+      thumbnail: {
+        width: 264,
+        height: 456,
+        src: '/src/assets/gallery/gal04.jpg',
+        alt: 'Členévé Turistického Oddílu Mládeže na výletě',
+      },
+    },
+    {
+      original: {
+        href: 'https://lh3.googleusercontent.com/pw/AMWts8CDS6GstMUJpVPsozzJi_3VduojT7bWLilh8kPoX0HV9MWbnh0ncdmDfU3zr7hUzOqUGYvezUcNhF9FmaPvWien3OSbQ2NKlUfmjYyNdZNOeuEkdQCycwaWc_PDTAocUvu_jRxwHNWp8ZexR8NeX1Zw=w1212-h812-no',
+        width: 1212,
+        height: 812,
+      },
+      thumbnail: {
+        width: 264,
+        height: 264,
+        src: '/src/assets/gallery/gal05.jpg',
+        alt: 'Výlet do Sobotky v roce 1992',
+      },
+    },
+  ],
+  [
+    {
+      original: {
+        href: 'https://lh3.googleusercontent.com/pw/AMWts8Bu2ljwHIlg_bWdXtzoAFWb6unpC4bhjgYYidEpx1tdjfW5DoKbOtafuM9IHf_ypX9Vl3eItEyepOTcgBynz-zSn0wOTkLdnXEwqpleLID0HujeloH3QoYLHOhhhNCZy-pCBpm2cOC3bgoHrINWm7qR=w810-h1210-no',
+        width: 810,
+        height: 1210,
+      },
+      thumbnail: {
+        width: 264,
+        height: 432,
+        src: '/src/assets/gallery/gal06.jpg',
+        alt: 'Dohled nad hladkým průběhem Provodínské Štrapandy',
+      },
+    },
+  ],
+];
 ---
 
 <Section>
   <SectionHeader title="Štrapanda v obrazech" />
-  <div class="gallery">
-    <div class="gallery-group">
-      <Picture
-        attributes={{
-          img: { class: 'gallery-image' },
-        }}
-        src={'/src/assets/gallery/gal01.jpg'}
-        alt="Kontrolní bod na Husí cestě"
-        sizes="(max-width: 480px) 100vw, 264px"
-        w={264}
-        h={480}
-      />
-    </div>
-    <div class="gallery-group">
-      <Picture
-        attributes={{
-          img: { class: 'gallery-image' },
-        }}
-        src={'/src/assets/gallery/gal02.jpg'}
-        alt="Výlet do Saského Švýcarska - Kurort Rathen"
-        sizes="(max-width: 480px) 100vw, 264px"
-        w={264}
-        h={384}
-      />
-      <Picture
-        attributes={{
-          img: { class: 'gallery-image' },
-        }}
-        src={'/src/assets/gallery/gal03.jpg'}
-        alt="Propozice Provodínské Štrapandy z roku 1982"
-        sizes="(max-width: 480px) 100vw, 264px"
-        w={264}
-        h={384}
-      />
-    </div>
-    <div class="gallery-group">
-      <Picture
-        attributes={{
-          img: { class: 'gallery-image' },
-        }}
-        src={'/src/assets/gallery/gal04.jpg'}
-        alt="Členévé Turistického Oddílu Mládeže na výletě"
-        sizes="(max-width: 480px) 100vw, 264px"
-        w={264}
-        h={456}
-      />
-      <Picture
-        attributes={{
-          img: { class: 'gallery-image' },
-        }}
-        src={'/src/assets/gallery/gal05.jpg'}
-        alt="Výlet do Sobotky v roce 1992"
-        sizes="(max-width: 480px) 100vw, 264px"
-        w={264}
-        h={264}
-      />
-    </div>
-    <div class="gallery-group">
-      <Picture
-        attributes={{
-          img: { class: 'gallery-image' },
-        }}
-        src={'/src/assets/gallery/gal06.jpg'}
-        alt="Dohled nad hladkým průběhem Provodínské Štrapandy"
-        sizes="(max-width: 480px) 100vw, 264px"
-        w={264}
-        h={432}
-      />
-    </div>
+  <div class="gallery" id="gallery">
+    {
+      images.map((group) => (
+        <div class="gallery-group">
+          {group.map(({ original, thumbnail }) => (
+            <a
+              href={original.href}
+              data-pswp-width={original.width}
+              data-pswp-height={original.height}
+            >
+              <Picture
+                attributes={{
+                  img: { class: 'gallery-image' },
+                }}
+                src={thumbnail.src}
+                alt={thumbnail.alt}
+                sizes="(max-width: 480px) 100vw, 264px"
+                w={thumbnail.width}
+                h={thumbnail.height}
+              />
+            </a>
+          ))}
+        </div>
+      ))
+    }
   </div>
+  <script>
+    import '../../scripts/load-gallery.ts';
+  </script>
 </Section>
 
 <style>

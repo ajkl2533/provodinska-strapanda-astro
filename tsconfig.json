@@ -1,6 +1,6 @@
 {
   "extends": "astro/tsconfigs/strictest",
   "compilerOptions": {
-    "types": ["astro-imagetools"]
+    "moduleResolution": "nodenext"
   }
 }

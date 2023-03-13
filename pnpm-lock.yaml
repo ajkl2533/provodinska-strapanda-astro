@@ -17,6 +17,7 @@ specifiers:
   file-type: ^18.2.1
   find-cache-dir: ^4.0.0
   object-hash: ^3.0.0
+  photoswipe: ^5.3.6
   potrace: ^2.1.8
   prettier: ^2.8.4
   prettier-plugin-astro: ^0.8.0
@@ -28,6 +29,7 @@ dependencies:
   '@fontsource/montserrat': 4.5.14
   astro: 2.1.2
   astro-imagetools: 0.8.1_astro@2.1.2
+  photoswipe: 5.3.6
 
 devDependencies:
   '@astropub/codecs': 0.4.4
@@ -4263,6 +4265,11 @@ packages:
 
   /phin/2.9.3:
     resolution: {integrity: sha512-CzFr90qM24ju5f88quFC/6qohjC144rehe5n6DH900lgXmUe86+xCKc10ev56gRKC4/BkHUoG4uSiQgBiIXwDA==}
+
+  /photoswipe/5.3.6:
+    resolution: {integrity: sha512-v7e8iMfaPUujTACYsK5HBCCtFoW9n2dMZmjIlbvFS2oSpTQmPrfc3PrWnGx8OGY3jNOKho8JC8L277+m+9ag9Q==}
+    engines: {node: '>= 0.12.0'}
+    dev: false
 
   /picocolors/1.0.0:
     resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
