@@ -106,6 +106,7 @@ const images = [
               href={original.href}
               data-pswp-width={original.width}
               data-pswp-height={original.height}
+              class="gallery-link"
             >
               <Picture
                 attributes={{
@@ -191,5 +192,19 @@ const images = [
   :global(.gallery-image) {
     border-radius: var(--radiiLg);
     box-shadow: var(--shadow);
+    transition: all var(--transition) ease-in-out;
+  }
+  .gallery-link {
+    border-radius: var(--radiiLg);
+  }
+  .gallery-link:hover :global(.gallery-image),
+  .gallery-link:focus-visible :global(.gallery-image) {
+    transform: scale(1.05);
+  }
+  .gallery-link:focus-visible :global(.gallery-image) {
+    outline: 4px solid var(--interactionPrimaryOutline);
+  }
+  .gallery-link:focus {
+    outline: none;
   }
 </style>
