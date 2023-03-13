@@ -1,0 +1,128 @@
+---
+import { Picture } from 'astro-imagetools/components';
+import Section from '../common/Section.astro';
+import SectionHeader from '../common/SectionHeader.astro';
+---
+
+<Section>
+  <SectionHeader title="Štrapanda v obrazech" />
+  <div class="gallery">
+    <div class="gallery-group">
+      <Picture
+        attributes={{
+          img: { class: 'gallery-image' },
+        }}
+        src={'/src/assets/gallery/gal01.jpg'}
+        alt="Kontrolní bod na Husí cestě"
+        sizes="(max-width: 480px) 100vw, 264px"
+        w={264}
+        h={480}
+      />
+    </div>
+    <div class="gallery-group">
+      <Picture
+        attributes={{
+          img: { class: 'gallery-image' },
+        }}
+        src={'/src/assets/gallery/gal02.jpg'}
+        alt="Výlet do Saského Švýcarska - Kurort Rathen"
+        sizes="(max-width: 480px) 100vw, 264px"
+        w={264}
+        h={384}
+      />
+      <Picture
+        attributes={{
+          img: { class: 'gallery-image' },
+        }}
+        src={'/src/assets/gallery/gal03.jpg'}
+        alt="Propozice Provodínské Štrapandy z roku 1982"
+        sizes="(max-width: 480px) 100vw, 264px"
+        w={264}
+        h={384}
+      />
+    </div>
+    <div class="gallery-group">
+      <Picture
+        attributes={{
+          img: { class: 'gallery-image' },
+        }}
+        src={'/src/assets/gallery/gal04.jpg'}
+        alt="Členévé Turistického Oddílu Mládeže na výletě"
+        sizes="(max-width: 480px) 100vw, 264px"
+        w={264}
+        h={456}
+      />
+      <Picture
+        attributes={{
+          img: { class: 'gallery-image' },
+        }}
+        src={'/src/assets/gallery/gal05.jpg'}
+        alt="Výlet do Sobotky v roce 1992"
+        sizes="(max-width: 480px) 100vw, 264px"
+        w={264}
+        h={264}
+      />
+    </div>
+    <div class="gallery-group">
+      <Picture
+        attributes={{
+          img: { class: 'gallery-image' },
+        }}
+        src={'/src/assets/gallery/gal06.jpg'}
+        alt="Dohled nad hladkým průběhem Provodínské Štrapandy"
+        sizes="(max-width: 480px) 100vw, 264px"
+        w={264}
+        h={432}
+      />
+    </div>
+  </div>
+</Section>
+
+<style>
+  :root {
+    --galleryDisplay: block;
+    --galleryGap: 1.5rem;
+    --galleryCollumnsCount: 1;
+    --galleryDirection: column;
+  }
+  @media screen and (min-width: 35rem) {
+    :root {
+      --galleryCollumnsCount: 2;
+    }
+  }
+  @media screen and (min-width: 48rem) {
+    :root {
+      --galleryGap: 3rem;
+    }
+  }
+  @media screen and (min-width: 64rem) {
+    :root {
+      --galleryDisplay: flex;
+      --galleryDirection: row;
+    }
+  }
+  .gallery {
+    display: var(--galleryDisplay);
+    gap: var(--galleryGap);
+    flex-direction: var(--galleryDirection);
+    justify-content: center;
+    align-items: center;
+    column-count: var(--galleryCollumnsCount);
+    column-gap: var(--galleryGap);
+    margin: 0 auto;
+  }
+  .gallery :global(> * + *) {
+    margin-top: var(--galleryGap);
+  }
+  .gallery-group {
+    display: flex;
+    flex: 0 1 16.5rem;
+    max-width: 16.5rem;
+    flex-direction: column;
+    gap: var(--galleryGap);
+  }
+  :global(.gallery-image) {
+    border-radius: var(--radiiLg);
+    box-shadow: var(--shadow);
+  }
+</style>
