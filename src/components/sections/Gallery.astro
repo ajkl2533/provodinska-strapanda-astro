@@ -1,5 +1,6 @@
 ---
 import { Picture } from 'astro-imagetools/components';
+import Button from '../common/Button.astro';
 import Section from '../common/Section.astro';
 import SectionHeader from '../common/SectionHeader.astro';
 
@@ -95,6 +96,7 @@ const images = [
 
 <Section>
   <SectionHeader title="Štrapanda v obrazech" />
+
   <div class="gallery" id="gallery">
     {
       images.map((group) => (
@@ -121,6 +123,14 @@ const images = [
       ))
     }
   </div>
+  <div class="links">
+    <Button href="https://photos.app.goo.gl/ahg39tqDGVb8ewGB7">
+      Více ze Štrapandy
+    </Button>
+    <Button href="https://photos.app.goo.gl/cDPQGBicLJY8gJ2TA">
+      Více z TOMu
+    </Button>
+  </div>
   <script>
     import '../../scripts/load-gallery.ts';
   </script>
@@ -132,10 +142,12 @@ const images = [
     --galleryGap: 1.5rem;
     --galleryCollumnsCount: 1;
     --galleryDirection: column;
+    --linksDirection: column;
   }
-  @media screen and (min-width: 35rem) {
+  @media screen and (min-width: 40rem) {
     :root {
       --galleryCollumnsCount: 2;
+      --linksDirection: row;
     }
   }
   @media screen and (min-width: 48rem) {
@@ -148,6 +160,13 @@ const images = [
       --galleryDisplay: flex;
       --galleryDirection: row;
     }
+  }
+  .links {
+    display: flex;
+    gap: var(--galleryGap);
+    flex-direction: var(--linksDirection);
+    align-items: center;
+    justify-content: center;
   }
   .gallery {
     display: var(--galleryDisplay);

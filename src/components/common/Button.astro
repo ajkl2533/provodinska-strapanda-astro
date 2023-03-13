@@ -1,0 +1,40 @@
+---
+export interface Props {
+  href: string;
+  children: string;
+}
+
+const { href } = Astro.props;
+---
+
+<a href={href} class="button"><slot /></a>
+
+<style>
+  .button {
+    display: block;
+    padding: var(--s2) var(--s3);
+    font-size: var(--fontSizes30);
+    color: var(--interactionPrimaryColor);
+    background-color: transparent;
+    border: 2px solid var(--interactionPrimaryColor);
+    border-radius: var(--radiiLg);
+    transition: all var(--transition);
+    min-width: 16.5rem;
+    text-align: center;
+  }
+  .button:hover {
+    color: var(--interactionPrimaryColorContrast);
+    background-color: var(--interactionPrimaryColorFocus);
+    border-color: var(--interactionPrimaryColorFocus);
+    text-decoration: none;
+  }
+  .button:focus-visible {
+    outline: 4px solid var(--interactionPrimaryOutline);
+    outline-offset: 0;
+    text-decoration: none;
+  }
+  .button:hover {
+    color: var(--interactionPrimaryColorContrast);
+    background-color: var(--interactionPrimaryColorActive);
+  }
+</style>
