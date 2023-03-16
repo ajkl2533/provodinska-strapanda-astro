@@ -1,5 +1,6 @@
 ---
 import { Picture } from 'astro-imagetools/components';
+import { getAnchor } from '../../configs/navigation.js';
 import Button from '../common/Button.astro';
 import Section from '../common/Section.astro';
 import SectionHeader from '../common/SectionHeader.astro';
@@ -92,10 +93,11 @@ const images = [
     },
   ],
 ];
+const anchor = getAnchor('gallery');
 ---
 
-<Section>
-  <SectionHeader title="Štrapanda v obrazech" />
+<Section id={anchor}>
+  <SectionHeader title="Štrapanda v obrazech" id={anchor} />
 
   <div class="gallery" id="gallery">
     {

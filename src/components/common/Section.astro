@@ -2,12 +2,13 @@
 export interface Props {
   children: unknown;
   className?: string;
+  id?: string | undefined;
 }
 
-const { className } = Astro.props;
+const { className, id } = Astro.props;
 ---
 
-<section class:list={['section', 'stack', className]}>
+<section id={id} class:list={['section', 'stack', className]}>
   <slot />
 </section>
 

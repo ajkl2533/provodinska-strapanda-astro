@@ -79,7 +79,7 @@ a,
   text-transform: uppercase;
   letter-spacing: var(--letterSpacingsXl);
   text-decoration: none;
-  color: var(interactionPrimaryColor);
+  color: var(--interactionPrimaryColor);
 }
 
 a:hover,

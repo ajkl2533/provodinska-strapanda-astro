@@ -9,6 +9,7 @@ specifiers:
   '@typescript-eslint/parser': ^5.54.1
   astro: ^2.1.2
   astro-imagetools: ^0.8.1
+  astro-navbar: ^1.1.5
   eslint: ^8.36.0
   eslint-config-prettier: ^8.7.0
   eslint-plugin-astro: ^0.23.0
@@ -29,6 +30,7 @@ dependencies:
   '@fontsource/montserrat': 4.5.14
   astro: 2.1.2
   astro-imagetools: 0.8.1_astro@2.1.2
+  astro-navbar: 1.1.5
   photoswipe: 5.3.6
 
 devDependencies:
@@ -1489,6 +1491,10 @@ packages:
       potrace: 2.1.8
     optionalDependencies:
       imagetools-core: 3.0.2
+    dev: false
+
+  /astro-navbar/1.1.5:
+    resolution: {integrity: sha512-sP1t16j+yTVoX0QYuzqt1jLSFe9suH71Z8p96ExsorZtVQ7G/xOT4SCBTw296Vu7OgQY/Cese8iwT7xHQ37p8g==}
     dev: false
 
   /astro/2.1.2:

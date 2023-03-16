@@ -1,0 +1,158 @@
+---
+import {
+  Astronav,
+  MenuItems,
+  MenuIcon,
+  OpenIcon,
+  CloseIcon,
+} from 'astro-navbar';
+import { navigation, getAnchor } from '../configs/navigation.js';
+import Logo from '../assets/logo-light-sm.svg?raw';
+import NavClose from '../assets/nav-close.svg?raw';
+import NavOpen from '../assets/nav-open.svg?raw';
+
+const homeAnchor = getAnchor('home');
+---
+
+<header id="main-header" class="main-header">
+  <Astronav>
+    <div class="navbar">
+      <a href={`#${homeAnchor}`} style="display: flex;">
+        <Fragment set:html={Logo} />
+      </a>
+      <MenuIcon>
+        <OpenIcon>
+          <Fragment set:html={NavOpen} />
+        </OpenIcon>
+        <CloseIcon>
+          <Fragment set:html={NavClose} />
+        </CloseIcon>
+      </MenuIcon>
+    </div>
+    <MenuItems class="nav hidden">
+      <ul class="nav-list">
+        {
+          Object.entries(navigation).map(([, item]) => {
+            if ('href' in item) {
+              return (
+                <li>
+                  <a class="nav-list-item" href={item.href}>
+                    {item.label}
+                  </a>
+                </li>
+              );
+            } else {
+              return (
+                <li>
+                  <a class="nav-list-item" href={`#${item.anchor}`}>
+                    {item.label}
+                  </a>
+                </li>
+              );
+            }
+          })
+        }
+      </ul>
+    </MenuItems>
+  </Astronav>
+</header>
+
+<script>
+  import '../scripts/navigation.ts';
+</script>
+
+<style>
+  :root {
+    --mainHeaderPadding: var(--s2);
+  }
+  @media screen and (min-width: 64rem) {
+    :root {
+      --mainHeaderPadding: var(--s4);
+    }
+  }
+  .main-header {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    width: 100%;
+    padding: var(--mainHeaderPadding);
+  }
+  .main-header.open {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000dd;
+    backdrop-filter: blur(4px);
+  }
+  .navbar {
+    display: flex;
+    gap: var(--s6);
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 5;
+  }
+  .navbar-toggler {
+    color: var(--colorText);
+  }
+
+  .nav {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overscroll-behavior-y: contain;
+    overflow-y: auto;
+  }
+  .nav-list {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--s4);
+  }
+  .nav-list-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 2.5rem;
+    font-size: var(--fontSizes60);
+  }
+</style>
+<style is:global>
+  :root {
+    --logoSize: 2.5rem;
+    --logoTextDisplay: none;
+  }
+  @media screen and (min-width: 64rem) {
+    :root {
+      --logoTextDisplay: block;
+    }
+  }
+  .logo {
+    height: var(--logoSize);
+  }
+  .logo-text {
+    display: var(--logoTextDisplay);
+  }
+  .main-header.open .logo-text {
+    display: block;
+  }
+  #astronav-menu {
+    height: var(--logoSize);
+  }
+  .navbar-toggler-icon {
+    height: var(--logoSize);
+    width: var(--logoSize);
+  }
+</style>

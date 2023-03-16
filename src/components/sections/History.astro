@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import { getAnchor } from '../../configs/navigation';
+import { getAnchor } from '../../configs/navigation.js';
 import SectionHeader from '../common/SectionHeader.astro';
 import HistorySection from '../common/HistorySection.astro';
 import Section from '../common/Section.astro';
@@ -9,8 +9,8 @@ const anchor = getAnchor('history');
 const blocks = await getCollection('history');
 ---
 
-<Section>
-  <SectionHeader id={anchor} title="Z historie pochodu" />
+<Section id={anchor}>
+  <SectionHeader title="Z historie pochodu" />
   <div class="history-stack stack">
     {blocks.map((block) => <HistorySection entry={block} />)}
   </div>

@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import { getAnchor } from '../../configs/navigation';
+import { getAnchor } from '../../configs/navigation.js';
 import Section from '../common/Section.astro';
 import SectionHeader from '../common/SectionHeader.astro';
 import Switcher from '../common/Switcher.astro';
@@ -17,8 +17,8 @@ const bikingTracks = await getCollection(
 );
 ---
 
-<Section>
-  <SectionHeader title="Trasy pochodu" id={anchor} />
+<Section id={anchor}>
+  <SectionHeader title="Trasy pochodu" />
   <Switcher threshold="48rem" gutter="s4" justify="center">
     {
       hikingTracks.map((track) => (
