@@ -52,7 +52,6 @@
     sans-serif;
 
   --fontWeightsRegular: 400;
-  --fontWeightsMedium: 500;
   --fontWeightsBold: 700;
 
   --fontSizes20: clamp(0.75rem, 0.221vw + 0.698rem, 0.875rem);

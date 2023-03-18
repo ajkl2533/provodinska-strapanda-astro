@@ -73,7 +73,6 @@ p,
 
 a,
 .link {
-  font-weight: var(--fontWeightsMedium);
   font-size: var(--fontSizes30);
   line-height: var(--lineHeightsSm);
   text-transform: uppercase;
