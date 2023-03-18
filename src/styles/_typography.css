@@ -89,6 +89,7 @@ a:hover,
 }
 a:focus-visible,
 .link:focus-visible {
+  outline: none;
   color: var(--interactionPrimaryColorFocus);
   text-decoration: underline;
 }

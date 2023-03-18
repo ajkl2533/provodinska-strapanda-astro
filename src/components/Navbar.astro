@@ -17,7 +17,7 @@ const homeAnchor = getAnchor('home');
 <header id="main-header" class="main-header">
   <Astronav>
     <div class="navbar">
-      <a href={`#${homeAnchor}`} style="display: flex;">
+      <a href={`#${homeAnchor}`} class="logo-link" style="display: flex;">
         <Fragment set:html={Logo} />
       </a>
       <MenuIcon>
@@ -128,6 +128,25 @@ const homeAnchor = getAnchor('home');
     min-height: 2.5rem;
     font-size: var(--fontSizes60);
   }
+
+  :global(#astronav-menu),
+  .logo-link {
+    color: var(--colorText);
+    cursor: pointer;
+  }
+  :global(#astronav-menu:hover),
+  .logo-link:hover {
+    color: var(--interactionPrimaryColorHover);
+  }
+  :global(#astronav-menu:focus-visible),
+  .logo-link:focus-visible {
+    color: var(--interactionPrimaryColorFocus);
+  }
+  :global(#astronav-menu:active),
+  .logo-link:active {
+    color: var(--interactionPrimaryColorActive);
+  }
+  #astronav-menu;
 </style>
 <style is:global>
   :root {
@@ -145,6 +164,7 @@ const homeAnchor = getAnchor('home');
   .logo-text {
     display: var(--logoTextDisplay);
   }
+
   .main-header.open .logo-text {
     display: block;
   }

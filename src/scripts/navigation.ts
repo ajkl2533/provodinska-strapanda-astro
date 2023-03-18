@@ -26,6 +26,14 @@ document.addEventListener('DOMContentLoaded', function () {
   menuButton?.addEventListener('click', () => {
     toggleNav();
   });
+  document.body.addEventListener('keydown', (e) => {
+    if (
+      document?.querySelector('#main-header')?.classList.contains(OPEN_CLASS) &&
+      e.key === 'Escape'
+    ) {
+      toggleNav(true);
+    }
+  });
 
   const menuListItems = document.querySelectorAll('.nav-list-item');
   menuListItems?.forEach((el) => {
