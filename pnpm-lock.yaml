@@ -10,6 +10,7 @@ specifiers:
   astro: ^2.1.2
   astro-imagetools: ^0.8.1
   astro-navbar: ^1.1.5
+  astro-seo: ^0.7.1
   eslint: ^8.36.0
   eslint-config-prettier: ^8.7.0
   eslint-plugin-astro: ^0.23.0
@@ -22,6 +23,7 @@ specifiers:
   potrace: ^2.1.8
   prettier: ^2.8.4
   prettier-plugin-astro: ^0.8.0
+  schema-dts: ^1.1.2
   style-dictionary: ^3.7.2
   typescript: ^4.9.5
 
@@ -31,7 +33,9 @@ dependencies:
   astro: 2.1.2
   astro-imagetools: 0.8.1_astro@2.1.2
   astro-navbar: 1.1.5
+  astro-seo: 0.7.1
   photoswipe: 5.3.6
+  schema-dts: 1.1.2_typescript@4.9.5
 
 devDependencies:
   '@astropub/codecs': 0.4.4
@@ -1495,6 +1499,10 @@ packages:
 
   /astro-navbar/1.1.5:
     resolution: {integrity: sha512-sP1t16j+yTVoX0QYuzqt1jLSFe9suH71Z8p96ExsorZtVQ7G/xOT4SCBTw296Vu7OgQY/Cese8iwT7xHQ37p8g==}
+    dev: false
+
+  /astro-seo/0.7.1:
+    resolution: {integrity: sha512-8Yo1nQrl2iB5zj+VUAHrvGIck8bZ4WAmXQgJOeF9FuAZGQD5qK6DtSZaRbpBXsFfZYHA6tE8pjs3btHhLbC1zQ==}
     dev: false
 
   /astro/2.1.2:
@@ -4678,6 +4686,14 @@ packages:
 
   /sax/1.2.4:
     resolution: {integrity: sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==}
+
+  /schema-dts/1.1.2_typescript@4.9.5:
+    resolution: {integrity: sha512-MpNwH0dZJHinVxk9bT8XUdjKTxMYrA5bLtrrGmFA6PTLwlOKnhi67XoRd6/ty+Djt6ZC0slR57qFhZDNMI6DhQ==}
+    peerDependencies:
+      typescript: '>=4.1.0'
+    dependencies:
+      typescript: 4.9.5
+    dev: false
 
   /section-matter/1.0.0:
     resolution: {integrity: sha512-vfD3pmTzGpufjScBh50YHKzEu2lxBWhVEHsNGoEXmCmn2hKGfeNLYMzCJpe8cD7gqX7TJluOVpBkAequ6dgMmA==}

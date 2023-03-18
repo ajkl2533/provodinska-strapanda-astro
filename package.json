@@ -19,7 +19,9 @@
     "astro": "^2.1.2",
     "astro-imagetools": "^0.8.1",
     "astro-navbar": "^1.1.5",
-    "photoswipe": "^5.3.6"
+    "astro-seo": "^0.7.1",
+    "photoswipe": "^5.3.6",
+    "schema-dts": "^1.1.2"
   },
   "devDependencies": {
     "@astropub/codecs": "^0.4.4",

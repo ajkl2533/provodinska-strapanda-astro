@@ -1,4 +1,5 @@
 ---
+import { SEO } from 'astro-seo';
 // import '@fontsource/barlow-condensed/700.css';
 // import '@fontsource/barlow-condensed/latin-ext-700.css';
 // import '@fontsource/barlow-condensed/400.css';
@@ -7,26 +8,86 @@ import '@fontsource/montserrat/700.css';
 import '@fontsource/montserrat/500.css';
 import '@fontsource/montserrat/400.css';
 import '../styles/index.css';
+import { eventStructuredData } from '../configs/structured-data.js';
 
 export interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
+const stringifiedEventData = JSON.stringify(eventStructuredData);
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    <SEO
+      charset="UTF-8"
+      title={title}
+      description="Rádi bychom pozvali všechny příznivce turistiky na tradiční pochod Provodínská Štrapanda pořádaný od roku 1975. Pořádá ♥ KČT Provodín"
+      canonical="https://provodinska-strapanda.cz/"
+      openGraph={{
+        basic: {
+          image: '/facebook-post.jpeg',
+          title: title,
+          type: 'website',
+          url: 'https://provodinska-strapanda.cz/',
+        },
+        optional: {
+          description:
+            'Rádi bychom pozvali všechny příznivce turistiky na tradiční pochod Provodínská Štrapanda pořádaný od roku 1975. Pořádá ♥ KČT Provodín',
+        },
+      }}
+      twitter={{
+        title: title,
+        description:
+          'Rádi bychom pozvali všechny příznivce turistiky na tradiční pochod Provodínská Štrapanda pořádaný od roku 1975. Pořádá ♥ KČT Provodín',
+        card: 'summary_large_image',
+        image: '/twitter-post.jpeg',
+        creator: '@RadekPodrazky',
+      }}
+      extend={{
+        meta: [
+          { name: 'twitter:url', content: 'https://provodinska-strapanda.cz/' },
+          {
+            name: 'viewport',
+            content:
+              'width=device-width, initial-scale=1.0, viewport-fit=cover',
+          },
+          { name: 'generator', content: Astro.generator },
+          { name: 'theme-color', content: '#192a01' },
+          { name: 'msapplication-TileColor', content: '#c99d55' },
+          { name: 'author', content: 'Radek Podrazky' },
+        ],
+        link: [
+          {
+            rel: 'apple-touch-icon',
+            type: 'image/png',
+            sizes: '180x180' as unknown as DOMTokenList,
+            href: '/favicon-32x32.png',
+          },
+          {
+            rel: 'icon',
+            type: 'image/png',
+            sizes: '32x32' as unknown as DOMTokenList,
+            href: '/favicon-32x32.png',
+          },
+          {
+            rel: 'icon',
+            type: 'image/png',
+            sizes: '16x16' as unknown as DOMTokenList,
+            href: '/favicon-16x16.png',
+          },
+          {
+            rel: 'manifest',
+            href: '/site.webmanifest',
+          },
+        ],
+      }}
     />
-    <title>{title}</title>
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#c99d55" />
+
+    <script type="application/ld+json" set:html={stringifiedEventData}></script>
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
