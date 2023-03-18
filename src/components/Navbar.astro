@@ -6,10 +6,11 @@ import {
   OpenIcon,
   CloseIcon,
 } from 'astro-navbar';
-import { navigation, getAnchor } from '../configs/navigation.js';
+import { getAnchor } from '../configs/navigation.js';
 import Logo from '../assets/logo-light-sm.svg?raw';
 import NavClose from '../assets/nav-close.svg?raw';
 import NavOpen from '../assets/nav-open.svg?raw';
+import NavList from './common/NavList.astro';
 
 const homeAnchor = getAnchor('home');
 ---
@@ -30,29 +31,7 @@ const homeAnchor = getAnchor('home');
       </MenuIcon>
     </div>
     <MenuItems class="nav hidden">
-      <ul class="nav-list">
-        {
-          Object.entries(navigation).map(([, item]) => {
-            if ('href' in item) {
-              return (
-                <li>
-                  <a class="nav-list-item" href={item.href}>
-                    {item.label}
-                  </a>
-                </li>
-              );
-            } else {
-              return (
-                <li>
-                  <a class="nav-list-item" href={`#${item.anchor}`}>
-                    {item.label}
-                  </a>
-                </li>
-              );
-            }
-          })
-        }
-      </ul>
+      <NavList class="main-nav-list" />
     </MenuItems>
   </Astronav>
 </header>
@@ -112,21 +91,10 @@ const homeAnchor = getAnchor('home');
     overscroll-behavior-y: contain;
     overflow-y: auto;
   }
-  .nav-list {
-    list-style: none;
+  .main-nav-list {
     text-align: center;
-    padding: 0;
-    margin: 0;
-    display: flex;
     flex-direction: column;
     gap: var(--s4);
-  }
-  .nav-list-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 2.5rem;
-    font-size: var(--fontSizes60);
   }
 
   :global(#astronav-menu),
@@ -140,13 +108,13 @@ const homeAnchor = getAnchor('home');
   }
   :global(#astronav-menu:focus-visible),
   .logo-link:focus-visible {
+    outline: none;
     color: var(--interactionPrimaryColorFocus);
   }
   :global(#astronav-menu:active),
   .logo-link:active {
     color: var(--interactionPrimaryColorActive);
   }
-  #astronav-menu;
 </style>
 <style is:global>
   :root {
@@ -174,5 +142,8 @@ const homeAnchor = getAnchor('home');
   .navbar-toggler-icon {
     height: var(--logoSize);
     width: var(--logoSize);
+  }
+  .main-nav-list .nav-list-item {
+    font-size: var(--fontSizes60);
   }
 </style>

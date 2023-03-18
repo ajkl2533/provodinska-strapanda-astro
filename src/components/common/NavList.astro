@@ -1,0 +1,47 @@
+---
+import { navigation } from '../../configs/navigation.js';
+
+export interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<ul class:list={['nav-list', className]}>
+  {
+    Object.entries(navigation).map(([, item]) => {
+      if ('href' in item) {
+        return (
+          <li>
+            <a class="nav-list-item" href={item.href}>
+              {item.label}
+            </a>
+          </li>
+        );
+      } else {
+        return (
+          <li>
+            <a class="nav-list-item" href={`#${item.anchor}`}>
+              {item.label}
+            </a>
+          </li>
+        );
+      }
+    })
+  }
+</ul>
+<style>
+  .nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  .nav-list-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 2.5rem;
+  }
+</style>

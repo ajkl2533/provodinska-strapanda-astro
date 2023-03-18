@@ -35,7 +35,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  const menuListItems = document.querySelectorAll('.nav-list-item');
+  const menuListItems = document.querySelectorAll(
+    '#main-header .nav-list-item'
+  );
   menuListItems?.forEach((el) => {
     el.addEventListener('click', () => {
       toggleNav(true);
