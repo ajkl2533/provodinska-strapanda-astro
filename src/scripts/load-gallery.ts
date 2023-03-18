@@ -1,10 +1,17 @@
 import PhotoSwipeLightbox from 'photoswipe/lightbox';
+import left from '../assets/icons/left.svg?raw';
+import right from '../assets/icons/right.svg?raw';
+import close from '../assets/icons/close.svg?raw';
 import 'photoswipe/style.css';
 
 const lightbox = new PhotoSwipeLightbox({
   gallery: '#gallery',
   children: 'a',
   pswpModule: () => import('photoswipe'),
+  arrowPrevSVG: left,
+  arrowNextSVG: right,
+  closeSVG: close,
+  zoom: false,
 });
 
 lightbox.addFilter('placeholderSrc', (placeholderSrc, content) => {

@@ -210,3 +210,23 @@ const anchor = getAnchor('gallery');
     outline: none;
   }
 </style>
+<style is:global>
+  .pswp--open .pswp__bg {
+    background-color: #000000ee;
+  }
+  .pswp--open .pswp__button {
+    color: var(--colorText);
+    cursor: pointer;
+    opacity: 1;
+  }
+  .pswp--open .pswp__button:hover {
+    color: var(--interactionPrimaryColorHover);
+  }
+  .pswp--open .pswp__button:focus-visible {
+    outline: none;
+    color: var(--interactionPrimaryColorFocus);
+  }
+  .pswp--open .pswp__button:active {
+    color: var(--interactionPrimaryColorActive);
+  }
+</style>
