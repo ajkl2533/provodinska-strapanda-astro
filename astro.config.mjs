@@ -1,9 +1,12 @@
 import { defineConfig } from 'astro/config';
-
-// https://astro.build/config
 import { astroImageTools } from 'astro-imagetools';
+import partytown from '@astrojs/partytown';
 
-// https://astro.build/config
 export default defineConfig({
-  integrations: [astroImageTools],
+  integrations: [
+    astroImageTools,
+    partytown({
+      config: { forward: ['dataLayer.push'] },
+    }),
+  ],
 });
