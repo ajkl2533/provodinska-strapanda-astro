@@ -1,9 +1,9 @@
 ---
 import { SEO } from 'astro-seo';
-// import '@fontsource/barlow-condensed/700.css';
-// import '@fontsource/barlow-condensed/latin-ext-700.css';
-// import '@fontsource/barlow-condensed/400.css';
-// import '@fontsource/barlow-condensed/latin-ext-400.css';
+import '@fontsource/barlow-condensed/700.css';
+import '@fontsource/barlow-condensed/latin-ext-700.css';
+import '@fontsource/barlow-condensed/400.css';
+import '@fontsource/barlow-condensed/latin-ext-400.css';
 import '@fontsource/montserrat/700.css';
 import '@fontsource/montserrat/500.css';
 import '@fontsource/montserrat/400.css';
@@ -88,26 +88,6 @@ const stringifiedEventData = JSON.stringify(eventStructuredData);
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#c99d55" />
 
     <script type="application/ld+json" set:html={stringifiedEventData}></script>
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      rel="preload"
-      as="style"
-      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&display=swap"
-      media="print"
-      onload="this.media='all'"
-    />
-    <noscript>
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&display=swap"
-      />
-    </noscript>
   </head>
   <body>
     <main>
