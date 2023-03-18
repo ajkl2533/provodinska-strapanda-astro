@@ -1,11 +1,5 @@
 ---
 import { SEO } from 'astro-seo';
-import '@fontsource/barlow-condensed/700.css';
-import '@fontsource/barlow-condensed/latin-ext-700.css';
-import '@fontsource/barlow-condensed/400.css';
-import '@fontsource/barlow-condensed/latin-ext-400.css';
-import '@fontsource/montserrat/700.css';
-import '@fontsource/montserrat/400.css';
 import '../styles/index.css';
 import { eventStructuredData } from '../configs/structured-data.js';
 
@@ -87,6 +81,97 @@ const stringifiedEventData = JSON.stringify(eventStructuredData);
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#c99d55" />
 
     <script type="application/ld+json" set:html={stringifiedEventData}></script>
+    <script>
+      if ('fonts' in document) {
+        Promise.all([
+          document.fonts.load('1em Barlow Condensed'),
+          document.fonts.load('700 1em Barlow Condensed'),
+          document.fonts.load('1em Montserrat'),
+          document.fonts.load('700 1em Montserrat'),
+        ]).then(() => {
+          document.documentElement.classList.add('fonts-loaded');
+        });
+      }
+    </script>
+    <style type="text/css">
+      html {
+        font-family: Montserrat, Verdana, Helvetica, Arial, sans-serif;
+      }
+      @font-face {
+        font-family: fallback-font;
+        ascent-override: 102%;
+        descent-override: 20%;
+        line-gap-override: 0;
+        advance-override: 10;
+        src: local('Arial Narrow');
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: fallback-font;
+        ascent-override: 117%;
+        descent-override: 28%;
+        line-gap-override: 0;
+        advance-override: 10;
+        src: local('Impact');
+        font-weight: 700;
+        size-adjust: 89%;
+      }
+      @font-face {
+        font-family: 'Barlow Condensed';
+        src: url('/fonts/BarlowCondensed-Regular-subset.woff2') format('woff2'),
+          url('/fonts/BarlowCondensed-Regular-subset.woff') format('woff');
+        unicode-range: U+A, U+20-22, U+25, U+28-3B, U+3D, U+3F, U+41-5A, U+61-7B,
+          U+7D, U+A0, U+C1, U+CD, U+DA, U+E1, U+E9, U+ED, U+FA, U+FD, U+10C,
+          U+10D, U+11A, U+11B, U+159, U+160, U+161, U+165, U+16E, U+16F, U+17D,
+          U+17E, U+301, U+30C, U+2013, U+2014, U+201C, U+201E;
+        font-weight: 400;
+        font-display: optional;
+      }
+      @font-face {
+        font-family: 'Barlow Condensed';
+        src: url('/fonts/BarlowCondensed-Bold-subset.woff2') format('woff2'),
+          url('/fonts/BarlowCondensed-Bold-subset.woff') format('woff');
+        unicode-range: U+A, U+20-22, U+25, U+28-3B, U+3D, U+3F, U+41-5A, U+61-7B,
+          U+7D, U+A0, U+C1, U+CD, U+DA, U+E1, U+E9, U+ED, U+FA, U+FD, U+10C,
+          U+10D, U+11A, U+11B, U+159, U+160, U+161, U+165, U+16E, U+16F, U+17D,
+          U+17E, U+301, U+30C, U+2013, U+2014, U+201C, U+201E;
+        font-weight: 700;
+        font-display: optional;
+      }
+      @font-face {
+        font-family: 'Montserrat';
+        src: url('/fonts/Montserrat-Regular-subset.woff2') format('woff2'),
+          url('/fonts/Montserrat-Regular-subset.woff') format('woff');
+        unicode-range: U+A, U+20-22, U+25, U+28-3B, U+3D, U+3F, U+41-5A, U+61-7B,
+          U+7D, U+A0, U+C1, U+CD, U+DA, U+E1, U+E9, U+ED, U+FA, U+FD, U+10C,
+          U+10D, U+11A, U+11B, U+159, U+160, U+161, U+165, U+16E, U+16F, U+17D,
+          U+17E, U+301, U+30C, U+2013, U+2014, U+201C, U+201E;
+        font-weight: 400;
+        font-display: optional;
+      }
+      @font-face {
+        font-family: 'Montserrat';
+        src: url('/fonts/Montserrat-Bold-subset.woff2') format('woff2'),
+          url('/fonts/Montserrat-Bold-subset.woff') format('woff');
+        unicode-range: U+A, U+20-22, U+25, U+28-3B, U+3D, U+3F, U+41-5A, U+61-7B,
+          U+7D, U+A0, U+C1, U+CD, U+DA, U+E1, U+E9, U+ED, U+FA, U+FD, U+10C,
+          U+10D, U+11A, U+11B, U+159, U+160, U+161, U+165, U+16E, U+16F, U+17D,
+          U+17E, U+301, U+30C, U+2013, U+2014, U+201C, U+201E;
+        font-weight: 700;
+        font-display: optional;
+      }
+
+      body {
+        --fontFamilyHeading: fallback-font;
+        --letterSpacingH1: -1.2px;
+        --letterSpacingH2: -1.1px;
+        --letterSpacingH3: -0.8px;
+        --wordSpacingH1: 5px;
+        --wordSpacingH2: 5px;
+        --wordSpacingH3: -0.6px;
+        --textIndentH3: -7px;
+      }
+    </style>
   </head>
   <body>
     <main>

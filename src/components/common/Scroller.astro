@@ -50,18 +50,19 @@
     background-color: white;
     border-radius: 100%;
     animation: fade-move-down 2.5s ease-in-out infinite;
+    transform: translateZ(0);
   }
 
   @-webkit-keyframes fade-move-down {
     0% {
-      top: var(--scrollerBulletPositionTop);
+      transform: translateY(var(--scrollerBulletPositionTop));
       opacity: 0;
     }
     33% {
       opacity: 1;
     }
     66% {
-      top: var(--scrollerBulletPositionBottom);
+      transform: translateY(var(--scrollerBulletPositionBottom));
       opacity: 0;
     }
     100% {

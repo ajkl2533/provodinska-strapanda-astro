@@ -1,3 +1,17 @@
+.fonts-loaded body {
+  --fontHeading: 'Barlow Condensed';
+  --fontFamilyHeading: var(--fontHeading), fallback-font, Helvetica, Arial,
+    sans-serif;
+  --letterSpacingH1: var(--letterSpacingsXxs);
+  --letterSpacingH2: var(--letterSpacingsXs);
+  --letterSpacingH3: 0;
+  --letterSpacingH6: var(--letterSpacingsSm);
+  --wordSpacingH1: 0;
+  --wordSpacingH2: 0;
+  --wordSpacingH3: 0;
+  --textIndentH3: 0;
+}
+
 h1,
 .h1,
 h2,
@@ -35,16 +49,21 @@ h6,
 h1,
 .h1 {
   font-size: var(--fontSizes100);
-  letter-spacing: var(--letterSpacingsXxs);
+  letter-spacing: var(--letterSpacingH1);
+  word-spacing: var(--wordSpacingH1);
 }
 h2,
 .h2 {
   font-size: var(--fontSizes90);
-  letter-spacing: var(--letterSpacingsXs);
+  letter-spacing: var(--letterSpacingH2);
+  word-spacing: var(--wordSpacingH2);
 }
 h3,
 .h3 {
   font-size: var(--fontSizes80);
+  letter-spacing: var(--letterSpacingH3);
+  word-spacing: var(--wordSpacingH3);
+  text-indent: var(--textIndentH3);
 }
 h4,
 .h4 {
@@ -58,6 +77,7 @@ h6,
 .h6 {
   font-size: var(--fontSizes50);
   letter-spacing: var(--letterSpacingsSm);
+  letter-spacing: var(--letterSpacingH6);
 }
 
 p,

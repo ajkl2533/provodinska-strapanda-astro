@@ -46,10 +46,7 @@
   --neutral900: #1c2833;
 
   --fontBase: Montserrat;
-  --fontHeading: 'Barlow Condensed';
   --fontFamilyBase: var(--fontBase), Verdana, Helvetica, Arial, sans-serif;
-  --fontFamilyHeading: var(--fontHeading), 'Arial Narrow', Helvetica, Arial,
-    sans-serif;
 
   --fontWeightsRegular: 400;
   --fontWeightsBold: 700;
