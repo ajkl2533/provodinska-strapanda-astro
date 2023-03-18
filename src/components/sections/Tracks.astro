@@ -30,20 +30,17 @@ const bikingTracks = await getCollection(
       ))
     }
   </Switcher>
-  <div class="tracks-bike stack">
-    <h3 class="text-align-center">Cyklotrasy</h3>
-    <Switcher threshold="48rem" gutter="s4" justify="center">
-      {
-        bikingTracks.map((track) => (
-          <Track
-            length={track.data.length}
-            type={track.data.type}
-            description={track.body}
-          />
-        ))
-      }
-    </Switcher>
-  </div>
+  <Switcher threshold="48rem" gutter="s4" justify="center">
+    {
+      bikingTracks.map((track) => (
+        <Track
+          length={track.data.length}
+          type={track.data.type}
+          description={track.body}
+        />
+      ))
+    }
+  </Switcher>
 </Section>
 <style>
   .tracks-bike {

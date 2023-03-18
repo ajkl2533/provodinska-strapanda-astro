@@ -1,11 +1,5 @@
 ---
-import {
-  Astronav,
-  MenuItems,
-  MenuIcon,
-  OpenIcon,
-  CloseIcon,
-} from 'astro-navbar';
+import { Astronav, MenuItems, OpenIcon, CloseIcon } from 'astro-navbar';
 import { getAnchor } from '../configs/navigation.js';
 import Logo from '../assets/logo-light-sm.svg?raw';
 import NavClose from '../assets/icons/close.svg?raw';
@@ -18,17 +12,22 @@ const homeAnchor = getAnchor('home');
 <header id="main-header" class="main-header">
   <Astronav>
     <div class="navbar">
-      <a href={`#${homeAnchor}`} class="logo-link" style="display: flex;">
+      <a
+        href={`#${homeAnchor}`}
+        aria-label="Logo Provodínská Štrapanda"
+        class="logo-link"
+        style="display: flex;"
+      >
         <Fragment set:html={Logo} />
       </a>
-      <MenuIcon>
+      <button id="astronav-menu" class="nav-toggler" aria-label="Navigace webu">
         <OpenIcon>
           <Fragment set:html={NavOpen} />
         </OpenIcon>
         <CloseIcon>
           <Fragment set:html={NavClose} />
         </CloseIcon>
-      </MenuIcon>
+      </button>
     </div>
     <MenuItems class="nav hidden">
       <NavList class="main-nav-list" />
@@ -74,9 +73,6 @@ const homeAnchor = getAnchor('home');
     position: relative;
     z-index: 5;
   }
-  .navbar-toggler {
-    color: var(--colorText);
-  }
 
   .nav {
     position: absolute;
@@ -97,21 +93,21 @@ const homeAnchor = getAnchor('home');
     gap: var(--s4);
   }
 
-  :global(#astronav-menu),
+  .nav-toggler,
   .logo-link {
     color: var(--colorText);
     cursor: pointer;
   }
-  :global(#astronav-menu:hover),
+  .nav-toggler:hover,
   .logo-link:hover {
     color: var(--interactionPrimaryColorHover);
   }
-  :global(#astronav-menu:focus-visible),
+  .nav-toggler:focus-visible,
   .logo-link:focus-visible {
     outline: none;
     color: var(--interactionPrimaryColorFocus);
   }
-  :global(#astronav-menu:active),
+  .nav-toggler:active,
   .logo-link:active {
     color: var(--interactionPrimaryColorActive);
   }
@@ -136,7 +132,7 @@ const homeAnchor = getAnchor('home');
   .main-header.open .logo-text {
     display: block;
   }
-  #astronav-menu {
+  .nav-toggler {
     height: var(--logoSize);
   }
   .navbar-toggler-icon {
