@@ -8,11 +8,9 @@ export interface Props {
 }
 
 const { length, type, description } = Astro.props;
-
-const backgroundPattern = `url('src/assets/${type}.svg')`;
 ---
 
-<article class="track stack">
+<article class:list={['track stack', type]}>
   <header class="track-header stack">
     <p class="overline">{type === 'hike' ? 'Pro pěší' : 'Pro cyklisty'}</p>
     <h3>{length}&nbsp;km</h3>
@@ -20,18 +18,24 @@ const backgroundPattern = `url('src/assets/${type}.svg')`;
   <p>{description}</p>
 </article>
 
-<style define:vars={{ pattern: backgroundPattern }}>
+<style>
   .track {
     gap: var(--s4);
-    background-image: var(--pattern),
-      linear-gradient(180deg, var(--green700) 0%, var(--green800) 100%);
     background-blend-mode: soft-light;
-    background-size: 250%;
+    background-size: 120%;
     background-position: center;
     border-radius: var(--radiiLg);
     box-shadow: var(--shadow);
     padding: var(--s4);
     max-width: 26rem;
+  }
+  .track.hike {
+    background-image: url('/src/assets/hike.svg'),
+      linear-gradient(180deg, var(--green700) 0%, var(--green800) 100%);
+  }
+  .track.bike {
+    background-image: url('/src/assets/bike.svg'),
+      linear-gradient(180deg, var(--green700) 0%, var(--green800) 100%);
   }
   .track-header {
     gap: var(--s1);
