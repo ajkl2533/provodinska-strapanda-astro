@@ -13,7 +13,7 @@ export default defineConfig({
         forward: ['dataLayer.push'],
       },
     }),
-    critters(),
+    // critters(),
     compress(),
   ],
 });

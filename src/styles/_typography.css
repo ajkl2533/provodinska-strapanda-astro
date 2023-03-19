@@ -1,7 +1,4 @@
 .fonts-loaded body {
-  --fontHeading: 'Barlow Condensed';
-  --fontFamilyHeading: var(--fontHeading), fallback-font, Helvetica, Arial,
-    sans-serif;
   --letterSpacingH1: var(--letterSpacingsXxs);
   --letterSpacingH2: var(--letterSpacingsXs);
   --letterSpacingH3: 0;
