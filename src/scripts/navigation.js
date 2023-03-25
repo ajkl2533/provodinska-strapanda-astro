@@ -1,18 +1,18 @@
 const OPEN_CLASS = 'open';
-function hasOpenClass(classes: DOMTokenList | undefined) {
+function hasOpenClass(classes) {
   return classes?.contains(OPEN_CLASS);
 }
+function getHeaderElement() {
+  return document?.querySelector('#main-header');
+}
 
-function toggleNav(forceClose?: boolean) {
-  const headerClassList = document?.querySelector('#main-header')?.classList;
+function toggleNav(forceClose) {
+  const headerClassList = getHeaderElement().classList;
 
   headerClassList?.toggle(OPEN_CLASS);
-
-  if (hasOpenClass(headerClassList)) {
-    document.body.style.overflow = 'hidden';
-  } else {
-    document.body.style.overflow = 'auto';
-  }
+  document.body.style.overflow = hasOpenClass(headerClassList)
+    ? 'hidden'
+    : 'auto';
 
   if (forceClose) {
     [...document.querySelectorAll('.astronav-toggle')].forEach((el) => {
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
   document.body.addEventListener('keydown', (e) => {
     if (
-      document?.querySelector('#main-header')?.classList.contains(OPEN_CLASS) &&
+      getHeaderElement()?.classList.contains(OPEN_CLASS) &&
       e.key === 'Escape'
     ) {
       toggleNav(true);

@@ -1,11 +1,14 @@
 ---
+import { minify } from 'terser';
 import { Astronav, MenuItems, OpenIcon, CloseIcon } from 'astro-navbar';
 import { getAnchor } from '../configs/navigation.js';
 import Logo from '../assets/logo-light-sm.svg?raw';
 import NavClose from '../assets/icons/close.svg?raw';
 import NavOpen from '../assets/icons/hamburger.svg?raw';
 import NavList from './common/NavList.astro';
+import navigation from '../scripts/navigation.js?raw';
 
+const navigationMin = await minify(navigation, { mangle: { toplevel: true } });
 const homeAnchor = getAnchor('home');
 ---
 
@@ -33,12 +36,8 @@ const homeAnchor = getAnchor('home');
       <NavList class="main-nav-list" />
     </MenuItems>
   </Astronav>
+  <script set:html={navigationMin.code}></script>
 </header>
-
-<script>
-  import '../scripts/navigation.ts';
-</script>
-
 <style>
   :root {
     --mainHeaderPadding: var(--s2);
