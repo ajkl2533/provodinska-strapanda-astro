@@ -179,11 +179,10 @@ jobs:
         run: pnpm build
 
       - name: 📂 Sync files
-        uses: SamKirkland/FTP-Deploy-Action@4.3.2
+        uses: sebastianpopp/ftp-action@releases/v2
         with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USERNAME }}
+          host: ${{ secrets.FTP_HOST }}
+          user: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist/
-          server-dir: sub/test/
-          log-level: verbose
+          localDir: ./dist/
+          remoteDir: sub/test/
