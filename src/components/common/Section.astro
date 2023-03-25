@@ -3,16 +3,26 @@ export interface Props {
   children: unknown;
   className?: string;
   id?: string | undefined;
+  gradient?: 'none' | 'top' | 'bottom';
 }
 
-const { className, id } = Astro.props;
+const { className, id, gradient = 'none' } = Astro.props;
+
+const gradientVar =
+  gradient === 'top'
+    ? 'linear-gradient(#244d02ff 1%, #244d0200 100%)'
+    : gradient === 'bottom'
+    ? 'linear-gradient(#244d0200 0%, #244d02ff 99%)'
+    : 'transparent';
 ---
 
-<section id={id} class:list={['section', 'stack', className]}>
-  <slot />
+<section id={id} class="section-wrapper">
+  <div class:list={['section', 'stack', className]}>
+    <slot />
+  </div>
 </section>
 
-<style>
+<style define:vars={{ gradient: gradientVar }}>
   :root {
     --sectionPadding: var(--s6) var(--s4);
     --sectionGap: var(--s6);
@@ -29,6 +39,9 @@ const { className, id } = Astro.props;
     }
   }
 
+  .section-wrapper {
+    background-image: var(--gradient);
+  }
   .section {
     padding: var(--sectionPadding);
     gap: var(--sectionGap);

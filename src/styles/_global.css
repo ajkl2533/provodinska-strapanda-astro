@@ -5,6 +5,9 @@ body {
   line-height: var(--lineHeightSm);
   color: var(--colorText);
   background-color: var(--colorBackground);
+  background-image: url('/src/assets/bg-pattern.svg');
+  background-repeat: repeat;
+  background-size: 600px;
 }
 
 p,
