@@ -177,12 +177,11 @@ jobs:
       - name: 🛠 Build project
         if: steps.build.outputs.cache-hit != 'true'
         run: pnpm build
-
       - name: 📂 Sync files
-        uses: sebastianpopp/ftp-action@releases/v2
+        uses: SamKirkland/FTP-Deploy-Action@4.3.2
         with:
-          host: ${{ secrets.FTP_HOST }}
-          user: ${{ secrets.FTP_USERNAME }}
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          localDir: ./dist/
-          remoteDir: sub/test/
+          local-dir: ./out/
+          server-div: provodinska-strapanda.cz/sub/test/
