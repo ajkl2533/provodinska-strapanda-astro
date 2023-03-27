@@ -54,6 +54,8 @@ const homeAnchor = getAnchor('home');
     top: 0;
     width: 100%;
     padding: var(--mainHeaderPadding);
+    padding-left: max(var(--mainHeaderPadding), env(safe-area-inset-left));
+    padding-right: max(var(--mainHeaderPadding), env(safe-area-inset-right));
   }
   .main-header.open {
     top: 0;

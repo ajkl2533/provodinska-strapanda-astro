@@ -34,23 +34,23 @@ const { Content } = await entry.render();
   :root {
     --overlineGap: var(--s1);
     --overlineLineWidth: 1.5rem;
-    --sectionDirection: column;
-    --sectionEvenDirection: column;
-    --sectionGap: var(--s2);
-    --sectionCounterDisplay: none;
-    --sectionAlign: flex-start;
+    --historySectionDirection: column;
+    --historySectionEvenDirection: column;
+    --historySectionCounterDisplay: none;
+    --historySectionAlign: center;
+    --historySectionGap: var(--s3);
   }
   @media screen and (min-width: 40rem) {
     :root {
-      --sectionDirection: row;
-      --sectionEvenDirection: row-reverse;
-      --sectionGap: var(--s8);
-      --sectionCounterDisplay: block;
+      --historySectionDirection: row;
+      --historySectionEvenDirection: row-reverse;
+      --historySectionCounterDisplay: block;
+      --historySectionAlign: flex-start;
+      --historySectionGap: var(--s6);
     }
   }
   @media screen and (min-width: 48rem) {
     :root {
-      --sectionAlign: center;
     }
   }
 
@@ -58,14 +58,14 @@ const { Content } = await entry.render();
     counter-increment: history;
   }
   :global(.history-section:nth-of-type(2n)) {
-    flex-direction: var(--sectionEvenDirection);
+    flex-direction: var(--historySectionEvenDirection);
   }
   .history-section {
     display: flex;
-    flex-direction: var(--sectionDirection);
-    gap: var(--sectionGap);
+    flex-direction: var(--historySectionDirection);
+    gap: var(--historySectionGap);
     justify-content: center;
-    align-items: var(--sectionAlign);
+    align-items: var(--historySectionAlign);
   }
   .history-section :global(.astro-imagetools-picture img) {
     border-radius: var(--radiiLg);
@@ -88,7 +88,7 @@ const { Content } = await entry.render();
     position: absolute;
     top: -128px;
     left: -100px;
-    display: var(--sectionCounterDisplay);
+    display: var(--historySectionCounterDisplay);
   }
   .history-section-header .overline {
     display: flex;

@@ -59,7 +59,7 @@
   --fontSizes50: clamp(1rem, 0.442vw + 0.896rem, 1.25rem);
   --fontSizes60: clamp(1.125rem, 0.663vw + 0.97rem, 1.5rem);
   --fontSizes70: clamp(1.25rem, 1.326vw + 0.939rem, 2rem);
-  --fontSizes80: clamp(1.5rem, 2.652vw + 0.878rem, 3rem);
+  --fontSizes80: clamp(1.75rem, 2.21vw + 1.232rem, 3rem);
   --fontSizes90: clamp(2rem, 3.536vw + 1.171rem, 4rem);
   --fontSizes100: clamp(3rem, 5.304vw + 1.757rem, 6rem);
 

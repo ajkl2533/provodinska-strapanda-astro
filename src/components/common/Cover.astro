@@ -25,6 +25,8 @@ const cssPadding = `var(--${padding})`;
     flex-direction: column;
     min-block-size: 100vh;
     padding: var(--padding);
+    padding-left: max(var(--padding), env(safe-area-inset-left));
+    padding-right: max(var(--padding), env(safe-area-inset-right));
   }
   @supports (min-block-size: 1svh) {
     .cover {

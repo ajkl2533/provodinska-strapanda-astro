@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import { getAnchor } from '../../configs/navigation.js';
 import Section from '../common/Section.astro';
 import SectionHeader from '../common/SectionHeader.astro';
+import Stack from '../common/Stack.astro';
 import Switcher from '../common/Switcher.astro';
 import Track from '../common/Track.astro';
 
@@ -19,31 +20,28 @@ const bikingTracks = await getCollection(
 
 <Section id={anchor}>
   <SectionHeader title="Trasy pochodu" />
-  <Switcher threshold="48rem" gutter="s4" justify="center">
-    {
-      hikingTracks.map((track) => (
-        <Track
-          length={track.data.length}
-          type={track.data.type}
-          description={track.body}
-        />
-      ))
-    }
-  </Switcher>
-  <Switcher threshold="48rem" gutter="s4" justify="center">
-    {
-      bikingTracks.map((track) => (
-        <Track
-          length={track.data.length}
-          type={track.data.type}
-          description={track.body}
-        />
-      ))
-    }
-  </Switcher>
+  <Stack gutter="s4">
+    <Switcher threshold="48rem" gutter="s4" justify="center">
+      {
+        hikingTracks.map((track) => (
+          <Track
+            length={track.data.length}
+            type={track.data.type}
+            description={track.body}
+          />
+        ))
+      }
+    </Switcher>
+    <Switcher threshold="48rem" gutter="s4" justify="center">
+      {
+        bikingTracks.map((track) => (
+          <Track
+            length={track.data.length}
+            type={track.data.type}
+            description={track.body}
+          />
+        ))
+      }
+    </Switcher>
+  </Stack>
 </Section>
-<style>
-  .tracks-bike {
-    gap: var(--s4);
-  }
-</style>
