@@ -1,16 +1,23 @@
 ---
 import NavList from '../common/NavList.astro';
 import LogoKCT from '../../assets/logo-kct.svg?raw';
+import LogoKudyznudy from '../../assets/logo-kudyznudy.svg?raw';
 ---
 
 <footer class="main-footer">
+  <div class="logobox">
+    <Fragment set:html={LogoKCT} />
+    <p>Datová schránka: 7ggiwbm</p>
+  </div>
   <nav class="footer-nav">
     <NavList class="footer-nav-list" />
   </nav>
 
-  <div class="organizer">
-    <Fragment set:html={LogoKCT} />
-    <p>Datová schránka: 7ggiwbm</p>
+
+  <div class="logobox">
+    <a href="https://www.kudyznudy.cz/?utm_source=kzn&utm_medium=partneri_kzn&utm_campaign=banner" title="Kudyznudy.cz - tipy na výlet">
+      <Fragment set:html={LogoKudyznudy} />
+    </a>
   </div>
 </footer>
 
@@ -53,13 +60,13 @@ import LogoKCT from '../../assets/logo-kct.svg?raw';
     gap: var(--footerNavListGap);
   }
 
-  .organizer {
+  .logobox {
     display: flex;
     flex-direction: column;
-    gap: var(--s4);
+    gap: var(--s3);
     align-items: center;
   }
   :global(.logo-kct) {
-    height: 4rem;
+    width: 12.5rem;
   }
 </style>
