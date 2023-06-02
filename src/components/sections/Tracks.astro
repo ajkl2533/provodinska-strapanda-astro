@@ -37,6 +37,7 @@ const bikingTracks = sortByTrackLength(await getCollection(
           <Track
             length={track.data.length}
             type={track.data.type}
+            map={track.data.map}
             description={track.body}
           />
         ))
@@ -48,6 +49,7 @@ const bikingTracks = sortByTrackLength(await getCollection(
           <Track
             length={track.data.length}
             type={track.data.type}
+            map={track.data.map}
             description={track.body}
           />
         ))

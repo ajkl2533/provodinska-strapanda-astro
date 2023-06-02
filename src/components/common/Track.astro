@@ -1,13 +1,15 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import MapIcon from '../../assets/icons/map.svg?raw';
 
 export interface Props {
   length: CollectionEntry<'tracks'>['data']['length'];
   type: CollectionEntry<'tracks'>['data']['type'];
+  map: CollectionEntry<'tracks'>['data']['map'];
   description: CollectionEntry<'tracks'>['body'];
 }
 
-const { length, type, description } = Astro.props;
+const { length, type, description, map } = Astro.props;
 ---
 
 <article class:list={['track stack', type]}>
@@ -15,7 +17,8 @@ const { length, type, description } = Astro.props;
     <p class="overline">{type === 'hike' ? 'Pro pěší' : 'Pro cyklisty'}</p>
     <h3>{length}&nbsp;km</h3>
   </header>
-  <p>{description}</p>
+  <p class="desc">{description}</p>
+  <a data-length={map} href={map} target="_blank"><Fragment set:html={MapIcon} /> Mapa trasy</a>
 </article>
 
 <style>
@@ -36,6 +39,14 @@ const { length, type, description } = Astro.props;
   .track.bike {
     background-image: url('/src/assets/bike.svg'),
       linear-gradient(180deg, var(--green700) 0%, var(--green800) 100%);
+  }
+  .track a {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.5rem;
+  }
+  .track .desc {
+    flex: 1;
   }
   .track-header {
     gap: var(--s1);
