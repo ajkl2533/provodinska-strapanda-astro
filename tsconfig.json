@@ -1,6 +1,3 @@
 {
-  "extends": "astro/tsconfigs/strictest",
-  "compilerOptions": {
-    "moduleResolution": "nodenext"
-  }
+  "extends": "astro/tsconfigs/strict",
 }

@@ -5,6 +5,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:astro/recommended',
     'plugin:astro/jsx-a11y-recommended',
+    'plugin:markdown/recommended',
   ],
   rules: {
     '@typescript-eslint/triple-slash-reference': 'off',
