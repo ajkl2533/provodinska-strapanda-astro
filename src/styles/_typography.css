@@ -96,6 +96,7 @@ a,
   letter-spacing: var(--letterSpacingsXl);
   text-decoration: none;
   color: var(--interactionPrimaryColor);
+  cursor: pointer;
 }
 
 a:hover,
