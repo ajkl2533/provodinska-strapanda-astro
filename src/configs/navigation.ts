@@ -1,4 +1,4 @@
-type NavigationSections = 'home' | 'tracks' | 'history' | 'gallery' | 'contact';
+type NavigationSections = 'home' | 'tracks' | 'history' | 'gallery' | 'contact' | 'testimonials';
 type AnchorSection = {
   label: string;
   anchor: string;
@@ -14,6 +14,10 @@ export const navigation: Navigation = {
   home: {
     label: 'Úvod',
     anchor: 'uvod',
+  },
+  testimonials: {
+    label: 'Kronika',
+    anchor: 'kronika',
   },
   tracks: {
     label: 'Trasy',
@@ -34,7 +38,7 @@ export const navigation: Navigation = {
 };
 
 export const getAnchor = (
-  section: keyof typeof navigation
+  section: NavigationSections
 ): string | undefined => {
   const navSection = navigation[section];
 

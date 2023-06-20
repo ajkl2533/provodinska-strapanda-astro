@@ -47,5 +47,5 @@
     "style-dictionary": "^3.8.0",
     "typescript": "^4.9.5"
   },
-  "packageManager": "pnpm@8.6.0"
+  "packageManager": "pnpm@8.6.3"
 }
