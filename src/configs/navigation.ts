@@ -1,4 +1,10 @@
-type NavigationSections = 'home' | 'tracks' | 'history' | 'gallery' | 'contact' | 'testimonials';
+type NavigationSections =
+  | 'home'
+  | 'tracks'
+  | 'history'
+  | 'gallery'
+  | 'contact'
+  | 'testimonials';
 type AnchorSection = {
   label: string;
   anchor: string;
@@ -15,21 +21,21 @@ export const navigation: Navigation = {
     label: 'Úvod',
     anchor: 'uvod',
   },
+  gallery: {
+    label: 'Galerie 2023',
+    anchor: 'galerie',
+  },
   testimonials: {
     label: 'Kronika',
     anchor: 'kronika',
   },
   tracks: {
-    label: 'Trasy',
+    label: 'Trasy 2023',
     anchor: 'trasy',
   },
   history: {
     label: 'Historie',
     anchor: 'historie',
-  },
-  gallery: {
-    label: 'Galerie',
-    anchor: 'galerie',
   },
   contact: {
     label: 'Napište nám',
@@ -37,9 +43,7 @@ export const navigation: Navigation = {
   },
 };
 
-export const getAnchor = (
-  section: NavigationSections
-): string | undefined => {
+export const getAnchor = (section: NavigationSections): string | undefined => {
   const navSection = navigation[section];
 
   return 'anchor' in navSection ? navSection.anchor : undefined;

@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   const menuListItems = document.querySelectorAll(
-    '#main-header .nav-list-item'
+    '#main-header .nav-list-item',
   );
   menuListItems?.forEach((el) => {
     el.addEventListener('click', () => {

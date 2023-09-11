@@ -4,6 +4,8 @@ import { getAnchor } from '../../configs/navigation.js';
 import SectionHeader from '../common/SectionHeader.astro';
 import HistorySection from '../common/HistorySection.astro';
 import Section from '../common/Section.astro';
+import Button from '../common/Button.astro';
+import Stack from '../common/Stack.astro';
 
 const anchor = getAnchor('history');
 const blocks = await getCollection('history');
@@ -14,6 +16,11 @@ const blocks = await getCollection('history');
   <div class="history-stack stack">
     {blocks.map((block) => <HistorySection entry={block} />)}
   </div>
+  <Stack justify="center">
+    <Button href="https://photos.app.goo.gl/ahg39tqDGVb8ewGB7">
+      Fotografie ze starších ročníků
+    </Button>
+  </Stack>
 </Section>
 
 <style>

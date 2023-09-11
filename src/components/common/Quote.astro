@@ -1,0 +1,44 @@
+---
+export interface Props {
+  children: string;
+  author: string;
+}
+
+const { author } = Astro.props;
+---
+
+<blockquote class="quote">
+  <p class="quote-content">
+    <slot />
+  </p>
+  <footer>
+    <cite class="quote-author">{author}</cite>
+  </footer>
+</blockquote>
+
+<style>
+  .quote {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: var(--s2);
+  }
+  .quote-content {
+    text-align: center;
+    font-size: var(--fontSizes50);
+    text-wrap: balance;
+  }
+
+  .quote-author {
+    display: flex;
+    gap: var(--s1);
+    align-items: center;
+    font-size: var(--fontSizes60);
+    font-weight: var(--fontWeightsBold);
+    font-style: normal;
+    color: var(--colorAccent);
+  }
+  .quote-author::before {
+    content: '\2014'
+  }
+</style>
