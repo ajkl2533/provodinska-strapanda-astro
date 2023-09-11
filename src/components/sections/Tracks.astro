@@ -1,5 +1,5 @@
 ---
-import type { CollectionEntry} from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
 import { getCollection } from 'astro:content';
 import { getAnchor } from '../../configs/navigation.js';
 import Section from '../common/Section.astro';
@@ -8,24 +8,24 @@ import Stack from '../common/Stack.astro';
 import Switcher from '../common/Switcher.astro';
 import Track from '../common/Track.astro';
 
-function sortByTrackLength(items: CollectionEntry<"tracks">[]): CollectionEntry<"tracks">[] {
-    return items.sort((a, b) => {
-        if ((a['data']['length']) < (b['data']['length'])) {
-            return -1;
-        }
-        return 1;
-    });
+function sortByTrackLength(
+  items: CollectionEntry<'tracks'>[],
+): CollectionEntry<'tracks'>[] {
+  return items.sort((a, b) => {
+    if (a['data']['length'] < b['data']['length']) {
+      return -1;
+    }
+    return 1;
+  });
 }
 
 const anchor = getAnchor('tracks');
-const hikingTracks = sortByTrackLength(await getCollection(
-  'tracks',
-  ({ data }) => data.type === 'hike'
-));
-const bikingTracks = sortByTrackLength(await getCollection(
-  'tracks',
-  ({ data }) => data.type === 'bike'
-));
+const hikingTracks = sortByTrackLength(
+  await getCollection('tracks', ({ data }) => data.type === 'hike'),
+);
+const bikingTracks = sortByTrackLength(
+  await getCollection('tracks', ({ data }) => data.type === 'bike'),
+);
 ---
 
 <Section id={anchor}>

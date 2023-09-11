@@ -18,7 +18,9 @@ const { length, type, description, map } = Astro.props;
     <h3>{length}&nbsp;km</h3>
   </header>
   <p class="desc">{description}</p>
-  <a data-length={map} href={map} target="_blank"><Fragment set:html={MapIcon} /> Mapa trasy</a>
+  <a data-length={map} href={map} target="_blank">
+    <Fragment set:html={MapIcon} /> Mapa trasy
+  </a>
 </article>
 
 <style>
