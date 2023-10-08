@@ -44,7 +44,7 @@
     "file-type": "^18.5.0",
     "find-cache-dir": "^5.0.0",
     "object-hash": "^3.0.0",
-    "postcss": "^8.4.29",
+    "postcss": "^8.4.31",
     "potrace": "^2.1.8",
     "prettier": "^3.0.3",
     "prettier-plugin-astro": "^0.12.0"
