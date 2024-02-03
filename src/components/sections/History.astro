@@ -11,7 +11,7 @@ const anchor = getAnchor('history');
 const blocks = await getCollection('history');
 ---
 
-<Section id={anchor} gradient="bottom">
+<Section id={anchor} gradient="top">
   <SectionHeader title="Z historie pochodu" />
   <div class="history-stack stack">
     {blocks.map((block) => <HistorySection entry={block} />)}

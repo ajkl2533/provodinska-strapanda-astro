@@ -21,17 +21,17 @@ export const navigation: Navigation = {
     label: 'Úvod',
     anchor: 'uvod',
   },
-  gallery: {
-    label: 'Galerie 2023',
-    anchor: 'galerie',
+  tracks: {
+    label: 'Trasy',
+    anchor: 'trasy',
   },
   testimonials: {
     label: 'Kronika',
     anchor: 'kronika',
   },
-  tracks: {
-    label: 'Trasy 2023',
-    anchor: 'trasy',
+  gallery: {
+    label: 'Galerie',
+    anchor: 'galerie',
   },
   history: {
     label: 'Historie',
@@ -39,7 +39,7 @@ export const navigation: Navigation = {
   },
   contact: {
     label: 'Napište nám',
-    href: 'mailto:petr@provodinska-strapanda.cz',
+    href: 'mailto:podrazky.petr@gmail.com',
   },
 };
 
