@@ -1,5 +1,4 @@
 ---
-import { getCollection } from 'astro:content';
 import { getAnchor } from '../../configs/navigation.js';
 import SectionHeader from '../common/SectionHeader.astro';
 import HistorySection from '../common/HistorySection.astro';
@@ -8,7 +7,42 @@ import Button from '../common/Button.astro';
 import Stack from '../common/Stack.astro';
 
 const anchor = getAnchor('history');
-const blocks = await getCollection('history');
+const blocks = [
+  {
+    data: {
+      title: 'Jak to celé začalo?',
+      overline: 'První krůčky',
+      image: { name: '01', alt: '' },
+    },
+    body: `
+      <p>Historie Štrapandy se&nbsp;začala psát počátkem roku 1975. Skupinka místních milovníků dálkových pochodů, které&nbsp;se&nbsp;v&nbsp;té době staly velice populární náplní volného času, přišla s&nbsp;nápadem uspořádat vlastní akci.</p>
+      <p>Otci pochodu se&nbsp;stali M. Hanuš, L. Kohoutek a&nbsp;tvůrce názvu&nbsp;J. Klazar. Postupně se&nbsp;k&nbsp;nim přidávali další a&nbsp;z&nbsp;organizačních důvodů vznikl v&nbsp;rámci TJ Jestřebí-Provodín odbor turistiky. Jeho náplní byly hlavně pochody a&nbsp;plnění úkolů oblastních odznaků po&nbsp;celé zemi. Turistika v&nbsp;obci sílila a&nbsp;její nedílnou součástí byl&nbsp;také oddíl TOM (turistický oddíl mládeže). Z&nbsp;jeho řad postupem doby rostli účastníci i&nbsp;členové štábu dalších ročníků Štrapandy.</p>
+    `,
+  },
+  {
+    data: {
+      title: 'Sametový puchýř',
+      overline: 'Sláva a prestiž',
+      image: { name: '02', alt: '' },
+    },
+    body: `
+      <p>Jak Štrapanda „dospívala“, rostl i&nbsp;počet jejích účastníků. Z&nbsp;38 na&nbsp;1. ročníku k&nbsp;překročení tisícovky v&nbsp;roce 1983. Součástí programu bývala také večerní setkání účastníků, původně u&nbsp;ohně a&nbsp;o&nbsp;něco později na&nbsp;tanečních zábavách, které&nbsp;byly velice oblíbené. Nějakou dobu na&nbsp;ně občas navazovaly také druhé etapy pochodu.</p>
+      <p>Tradice, dobrá pověst Štrapandy i&nbsp;zkušenosti tehdejšího štábu vedeného panem Kommem byly důvodem, že&nbsp;byla provodínským v&nbsp;roce 1989 svěřena organizace nejprestižnější turistické akce každého roku – Poslední puchýř. Ten vždy uzavírá turistickou sezonu. V&nbsp;té době byla obec Jestřebí-Provodín nejmenším místem, kde&nbsp;se&nbsp;tahle akce pořádala.</p>
+      <p>Přes 1500 turistů se&nbsp;k&nbsp;nám sjelo 17.&nbsp;listopadu 1989. Určitě zajímavé datum!</p>
+    `,
+  },
+  {
+    data: {
+      title: 'Změna je život',
+      overline: 'A jde se dál!',
+      image: { name: '03', alt: '' },
+    },
+    body: `
+      <p>Tak&nbsp;jako pro&nbsp;celou zem, byl&nbsp;tento rok přelomem. Obnovila se&nbsp;činnost Klubu českých turistů a&nbsp;Provodínští se&nbsp;stali prvním odborem KČT na&nbsp;Českolipsku. Štrapanda mohla pokračovat. Trochu se&nbsp;obměnila sestava organizátorů, přibyli mladí. Také ale ubylo na&nbsp;nějakou dobu účastníků. Zájmy lidí se&nbsp;měnily a&nbsp;teprve po&nbsp;pár letech se&nbsp;účast stabilizovala znovu na&nbsp;sedmi až devíti stech turistech.</p>
+      <p>Tak&nbsp;jak znovu rostl zájem o&nbsp;účast, postupně ubývalo těch, kdo by&nbsp;chtěli akci zajišťovat. Pro&nbsp;Štrapandu bylo dobré, že&nbsp;se&nbsp;jí v&nbsp;roce 2005 ujala nová skupina organizátorů a&nbsp;pochod mohl pokračovat. Důležité bylo, že&nbsp;Štrapanda přežila a&nbsp;udržela si zájem turistů dodnes.</p>
+    `,
+  },
+];
 ---
 
 <Section id={anchor} gradient="top">

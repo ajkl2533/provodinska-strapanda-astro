@@ -1,12 +1,17 @@
 ---
-import type { CollectionEntry } from 'astro:content';
 import Stack from './Stack.astro';
 import { Picture } from 'astro-imagetools/components';
 export interface Props {
-  entry: CollectionEntry<'history'>;
+  entry: {
+    data: {
+      overline: string;
+      title: string;
+      image: { name: string; alt: string };
+    };
+    body: string;
+  };
 }
 const { entry } = Astro.props;
-const { Content } = await entry.render();
 ---
 
 <article class="history-section">
@@ -15,9 +20,7 @@ const { Content } = await entry.render();
       <p class="overline">{entry.data.overline}</p>
       <h3>{entry.data.title}</h3>
     </header>
-    <Stack gutter="s2">
-      <Content />
-    </Stack>
+    <Stack gutter="s2" set:html={entry.body} />
   </div>
   <Picture
     src={`/src/assets/history/${entry.data.image.name}.jpg`}

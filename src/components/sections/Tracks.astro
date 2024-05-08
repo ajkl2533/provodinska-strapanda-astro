@@ -1,6 +1,4 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import { getCollection } from 'astro:content';
 import { getAnchor } from '../../configs/navigation.js';
 import Section from '../common/Section.astro';
 import SectionHeader from '../common/SectionHeader.astro';
@@ -8,27 +6,67 @@ import Stack from '../common/Stack.astro';
 import Switcher from '../common/Switcher.astro';
 import Track from '../common/Track.astro';
 
-function sortByTrackLength(
-  items: CollectionEntry<'tracks'>[],
-): CollectionEntry<'tracks'>[] {
-  return items.sort((a, b) => {
-    if (a['data']['length'] < b['data']['length']) {
-      return -1;
-    }
-    return 1;
-  });
-}
-
+type Track = {
+  data: {
+    length: number;
+    map?: string;
+  };
+  body: string;
+};
 const anchor = getAnchor('tracks');
-const hikingTracks = sortByTrackLength(
-  await getCollection('tracks', ({ data }) => data.type === 'hike'),
-);
-const bikingTracks = sortByTrackLength(
-  await getCollection('tracks', ({ data }) => data.type === 'bike'),
-);
+const hikingTracks: Track[] = [
+  {
+    data: {
+      length: 10,
+      // map: ''
+    },
+    body: 'Provodín — Staré Splavy — Provodín',
+  },
+  {
+    data: {
+      length: 15,
+      // map: ''
+    },
+    body:
+      '​Provodín — Jestřebí — Braniborská jeskyně — Staré Splavy — Provodín',
+  },
+  {
+    data: {
+      length: 28,
+      // map: ''
+    },
+    body:
+      'Provodín — Jestřebí — Braniborská jeskyně — Staré Splavy — Doksy — Břehyně — Borný — St. Splavy — Provodín',
+  },
+];
+const bikingTracks: Track[] = [
+  {
+    data: {
+      length: 20,
+      // map: ''
+    },
+    body: 'Provodín — Srní — Okřešice — Sosnová — Zahrádky — Provodín',
+  },
+  {
+    data: {
+      length: 40,
+      // map: ''
+    },
+    body:
+      'Provodín — Senná brána — Veselí — Okřešice — Sosnová — Dubice — Kozly — Malý Bor — Holany — Borek — Zahrádky — Provodín',
+  },
+  {
+    data: {
+      length: 60,
+      // map: ''
+    },
+    body:
+      'Provodín — Senná brána — Veselí — Okřešice — Sosnová — Dubice — Kozly — Taneček — Kravaře — Blíževedly — Holany — Zahrádky — Provodín',
+  },
+];
 ---
 
-<Section id={anchor} gradient='bottom'>
+<Section id={anchor} gradient="bottom">
   <SectionHeader title="Trasy pochodu" />
   <Stack gutter="s4" justify="normal">
     <Switcher threshold="48rem" gutter="s4" justify="center">
@@ -36,7 +74,7 @@ const bikingTracks = sortByTrackLength(
         hikingTracks.map((track) => (
           <Track
             length={track.data.length}
-            type={track.data.type}
+            type="hike"
             map={track.data.map}
             description={track.body}
           />
@@ -48,7 +86,7 @@ const bikingTracks = sortByTrackLength(
         bikingTracks.map((track) => (
           <Track
             length={track.data.length}
-            type={track.data.type}
+            type="bike"
             map={track.data.map}
             description={track.body}
           />
