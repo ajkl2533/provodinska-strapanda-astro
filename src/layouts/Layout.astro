@@ -1,8 +1,8 @@
 ---
 import { SEO } from 'astro-seo';
 import SpeedInsights from '@vercel/speed-insights/astro';
-import '../styles/index.css';
 import { eventStructuredData } from '../configs/structured-data.js';
+import '../styles/index.css';
 
 export interface Props {
   title: string;
@@ -186,18 +186,5 @@ const stringifiedEventData = JSON.stringify(eventStructuredData);
     <main>
       <slot />
     </main>
-    <script
-      type="text/partytown"
-      src="https://www.googletagmanager.com/gtag/js?id=G-BZC5VX87WN"
-      is:inline></script>
-    <script type="text/partytown" is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        // eslint-disable-next-line prefer-rest-params
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      gtag('config', 'G-BZC5VX87WN');
-    </script>
   </body>
 </html>
