@@ -1,5 +1,6 @@
 ---
 import { SEO } from 'astro-seo';
+import SpeedInsights from "@vercel/speed-insights/astro";
 import '../styles/index.css';
 import { eventStructuredData } from '../configs/structured-data.js';
 
@@ -59,19 +60,19 @@ const stringifiedEventData = JSON.stringify(eventStructuredData);
           {
             rel: 'apple-touch-icon',
             type: 'image/png',
-            sizes: '180x180' as unknown as DOMTokenList,
+            sizes: '180x180',
             href: '/favicon-32x32.png',
           },
           {
             rel: 'icon',
             type: 'image/png',
-            sizes: '32x32' as unknown as DOMTokenList,
+            sizes: '32x32',
             href: '/favicon-32x32.png',
           },
           {
             rel: 'icon',
             type: 'image/png',
-            sizes: '16x16' as unknown as DOMTokenList,
+            sizes: '16x16',
             href: '/favicon-16x16.png',
           },
           {
@@ -83,7 +84,7 @@ const stringifiedEventData = JSON.stringify(eventStructuredData);
     />
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#c99d55" />
 
-    <script type="application/ld+json" set:html={stringifiedEventData} />
+    <script type="application/ld+json" set:html={stringifiedEventData} is:inline/>
     <script>
       if ('fonts' in document) {
         Promise.all([
@@ -175,21 +176,23 @@ const stringifiedEventData = JSON.stringify(eventStructuredData);
         --textIndentH3: -7px;
       }
     </style>
+    <SpeedInsights />
   </head>
   <body>
     <main>
       <slot />
     </main>
-    <script
+    <!-- <script
+    is:inline
       type="text/partytown"
       src="https://www.googletagmanager.com/gtag/js?id=G-BZC5VX87WN"></script>
-    <script type="text/partytown">
+    <script type="text/partytown" is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
       gtag('js', new Date());
       gtag('config', 'G-BZC5VX87WN');
-    </script>
+    </script> -->
   </body>
 </html>
