@@ -14,7 +14,7 @@ const tracksCollection = defineCollection({
   schema: z.object({
     length: z.number(),
     type: z.enum(['hike', 'bike']),
-    map: z.string().url(),
+    map: z.string().url().optional(),
   }),
 });
 const sectionsCollection = defineCollection({
