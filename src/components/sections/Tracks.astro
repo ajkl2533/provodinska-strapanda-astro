@@ -6,15 +6,15 @@ import Stack from '../common/Stack.astro';
 import Switcher from '../common/Switcher.astro';
 import Track from '../common/Track.astro';
 
-type Track = {
+interface TrackType {
   data: {
     length: number;
     map?: string;
   };
   body: string;
-};
+}
 const anchor = getAnchor('tracks');
-const hikingTracks: Track[] = [
+const hikingTracks: TrackType[] = [
   {
     data: {
       length: 10,
@@ -27,19 +27,17 @@ const hikingTracks: Track[] = [
       length: 15,
       // map: ''
     },
-    body:
-      '​Provodín — Jestřebí — Braniborská jeskyně — Staré Splavy — Provodín',
+    body: '​Provodín — Jestřebí — Braniborská jeskyně — Staré Splavy — Provodín',
   },
   {
     data: {
       length: 28,
       // map: ''
     },
-    body:
-      'Provodín — Jestřebí — Braniborská jeskyně — Staré Splavy — Doksy — Břehyně — Borný — St. Splavy — Provodín',
+    body: 'Provodín — Jestřebí — Braniborská jeskyně — Staré Splavy — Doksy — Břehyně — Borný — St. Splavy — Provodín',
   },
 ];
-const bikingTracks: Track[] = [
+const bikingTracks: TrackType[] = [
   {
     data: {
       length: 20,
@@ -52,16 +50,14 @@ const bikingTracks: Track[] = [
       length: 40,
       // map: ''
     },
-    body:
-      'Provodín — Senná brána — Veselí — Okřešice — Sosnová — Dubice — Kozly — Malý Bor — Holany — Borek — Zahrádky — Provodín',
+    body: 'Provodín — Senná brána — Veselí — Okřešice — Sosnová — Dubice — Kozly — Malý Bor — Holany — Borek — Zahrádky — Provodín',
   },
   {
     data: {
       length: 60,
       // map: ''
     },
-    body:
-      'Provodín — Senná brána — Veselí — Okřešice — Sosnová — Dubice — Kozly — Taneček — Kravaře — Blíževedly — Holany — Zahrádky — Provodín',
+    body: 'Provodín — Senná brána — Veselí — Okřešice — Sosnová — Dubice — Kozly — Taneček — Kravaře — Blíževedly — Holany — Zahrádky — Provodín',
   },
 ];
 ---
