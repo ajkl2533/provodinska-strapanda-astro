@@ -1,39 +1,46 @@
 ---
-import { BackgroundPicture } from 'astro-imagetools/components';
+import { Picture } from 'astro:assets';
 import { getAnchor } from '../../configs/navigation.js';
 import Cover from '../common/Cover.astro';
 import CTA from '../common/CTA.astro';
 import Scroller from '../common/Scroller.astro';
 import Stack from '../common/Stack.astro';
 import Switcher from '../common/Switcher.astro';
+import bgHero from '../../assets/background.jpg';
 
 const sectionAnchor = getAnchor('home');
 const galleryAnchor = getAnchor('gallery');
 ---
 
 <section class="hero" id={sectionAnchor}>
-  <BackgroundPicture
-    src="/src/assets/background.jpg"
-    objectFit="cover"
-    breakpoints={[375, 768, 1024, 1440, 1920]}
-  >
-    <Cover>
-      <Stack gutter={'s12'} justify="center" slot="center">
-        <Switcher gutter={'s8'} threshold="60rem" class="headline">
-          <h1 class="title-main text-condensed">
-            PROVODÍNSKÁ ŠTRAPANDA <span class="text-color-accent">2024</span>
-          </h1>
-          <div class="separator"></div>
-          <Stack gutter={'s1'} class="event-data">
-            <p class="h2">Sobota 15.&nbsp;června 2024</p>
-            <p class="h3">Sportovní areál u&nbsp;nádraží Jestřebí</p>
-          </Stack>
-        </Switcher>
-        <CTA href={`#${galleryAnchor}`}>Prohlédnout fotografie</CTA>
-      </Stack>
-      <Scroller slot="bottom" />
-    </Cover>
-  </BackgroundPicture>
+  <Cover>
+    <Stack gutter={'s12'} justify="center" slot="center">
+      <Switcher gutter={'s8'} threshold="60rem" class="headline">
+        <h1 class="title-main text-condensed">
+          PROVODÍNSKÁ ŠTRAPANDA <span class="text-color-accent">2024</span>
+        </h1>
+        <div class="separator"></div>
+        <Stack gutter={'s1'} class="event-data">
+          <p class="h2">Sobota 15.&nbsp;června 2024</p>
+          <p class="h3">Sportovní areál u&nbsp;nádraží Jestřebí</p>
+        </Stack>
+      </Switcher>
+      <CTA href={`#${galleryAnchor}`}>Prohlédnout fotografie</CTA>
+    </Stack>
+    <Scroller slot="bottom" />
+  </Cover>
+  <Picture
+    class="hero-image"
+    alt=""
+    src={bgHero}
+    widths={[375, 768, 1024, 1440, 1920]}
+    sizes="100vw"
+    alt=""
+    decoding="async"
+    loading="eager"
+    fetchpriority="high"
+    formats={['avif', 'webp', 'jpeg']}
+  />
 </section>
 
 <style>
@@ -59,6 +66,17 @@ const galleryAnchor = getAnchor('gallery');
     }
   }
 
+  .cover {
+    position: relative;
+    z-index: 1;
+  }
+  .hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
   .headline {
     align-items: center;
     justify-content: center;

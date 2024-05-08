@@ -1,9 +1,15 @@
 ---
-import { Picture } from 'astro-imagetools/components';
+import { Picture } from 'astro:assets';
 import { getAnchor } from '../../configs/navigation.js';
 import Button from '../common/Button.astro';
 import Section from '../common/Section.astro';
 import SectionHeader from '../common/SectionHeader.astro';
+import gal01 from '/src/assets/gallery2023/gal01.jpg';
+import gal02 from '/src/assets/gallery2023/gal02.jpg';
+import gal03 from '/src/assets/gallery2023/gal03.jpg';
+import gal04 from '/src/assets/gallery2023/gal04.jpg';
+import gal05 from '/src/assets/gallery2023/gal05.jpg';
+import gal06 from '/src/assets/gallery2023/gal06.jpg';
 
 const images = [
   [
@@ -14,9 +20,7 @@ const images = [
         height: 1200,
       },
       thumbnail: {
-        width: 264,
-        height: 480,
-        src: '/src/assets/gallery2023/gal01.jpg',
+        src: gal01,
         alt: 'Chvílemi se na startu Štrapandy tvořily fronty',
       },
     },
@@ -29,9 +33,7 @@ const images = [
         height: 797,
       },
       thumbnail: {
-        width: 264,
-        height: 384,
-        src: '/src/assets/gallery2023/gal02.jpg',
+        src: gal02,
         alt: 'Pro znavené účastníky bylo připraveno posezení',
       },
     },
@@ -42,9 +44,7 @@ const images = [
         height: 1200,
       },
       thumbnail: {
-        width: 264,
-        height: 384,
-        src: '/src/assets/gallery2023/gal03.jpg',
+        src: gal03,
         alt: 'Děti i dospělí, kteří pochod dokončili si mohli upéct špekáčky',
       },
     },
@@ -57,9 +57,7 @@ const images = [
         height: 1200,
       },
       thumbnail: {
-        width: 264,
-        height: 456,
-        src: '/src/assets/gallery2023/gal04.jpg',
+        src: gal04,
         alt: 'Naši dobrovolníci jsou vždy připraveni poradit',
       },
     },
@@ -70,9 +68,7 @@ const images = [
         height: 797,
       },
       thumbnail: {
-        width: 264,
-        height: 264,
-        src: '/src/assets/gallery2023/gal05.jpg',
+        src: gal05,
         alt: 'Prezence na startu Provodínské Štrapandy 2023',
       },
     },
@@ -85,9 +81,7 @@ const images = [
         height: 1200,
       },
       thumbnail: {
-        width: 264,
-        height: 432,
-        src: '/src/assets/gallery2023/gal06.jpg',
+        src: gal06,
         alt: 'K Provodínské Štrapandě tradičně patří i výborné jídlo',
       },
     },
@@ -111,14 +105,17 @@ const anchor = getAnchor('gallery');
               class="gallery-link"
             >
               <Picture
-                attributes={{
-                  img: { class: 'gallery-image' },
-                }}
                 src={thumbnail.src}
                 alt={thumbnail.alt}
+                class="gallery-image"
+                widths={[264, 480]}
                 sizes="(max-width: 480px) 100vw, 264px"
-                w={thumbnail.width}
-                h={thumbnail.height}
+                width={thumbnail.src.width / 2}
+                height={thumbnail.src.height / 2}
+                decoding="async"
+                loading="lazy"
+                fetchpriority="low"
+                formats={['avif', 'webp', 'jpeg']}
               />
             </a>
           ))}
@@ -127,9 +124,7 @@ const anchor = getAnchor('gallery');
     }
   </div>
   <div class="links">
-    <Button
-      href="https://photos.app.goo.gl/12VgAGftNK91aUp89"
-    >
+    <Button href="https://photos.app.goo.gl/12VgAGftNK91aUp89">
       Všechny fotky ze Štrapandy 2023
     </Button>
     <Button href="https://photos.app.goo.gl/cDPQGBicLJY8gJ2TA">

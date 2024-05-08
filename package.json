@@ -4,8 +4,8 @@
   "version": "0.0.1",
   "license": "MIT",
   "engines": {
-    "node": ">=18",
-    "pnpm": ">=8"
+    "node": "20.x",
+    "pnpm": "8.x"
   },
   "scripts": {
     "start": "astro check --watch & astro dev",
@@ -14,45 +14,36 @@
     "astro": "astro",
     "lint": "eslint 'src/**/*.{js,ts,jsx,tsx,astro}'",
     "lint:fix": "eslint --fix 'src/**/*.{js,ts,jsx,tsx,astro}'",
-    "buildTokens": "node ./scripts/buildTokens2.js"
+    "format": "prettier -w ./src"
   },
   "dependencies": {
     "@astrojs/check": "^0.6.0",
     "@astrojs/partytown": "^2.1.0",
-    "@fontsource/barlow-condensed": "^5.0.8",
-    "@fontsource/montserrat": "^5.0.8",
-    "astro": "^4.7.1",
-    "astro-compress": "^2.0.15",
-    "astro-imagetools": "^0.9.0",
-    "astro-navbar": "^2.0.1",
-    "astro-seo": "^0.8.0",
-    "photoswipe": "^5.4.0",
-    "schema-dts": "^1.1.2",
-    "typescript": "^5.2.2"
-  },
-  "devDependencies": {
+    "@astrojs/vercel": "^7.5.4",
     "@astropub/codecs": "^0.4.4",
-    "@typescript-eslint/eslint-plugin": "^6.6.0",
-    "@typescript-eslint/parser": "^6.6.0",
-    "autoprefixer": "^10.4.15",
-    "eslint": "^8.49.0",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-astro": "^0.29.0",
-    "eslint-plugin-import": "^2.28.1",
-    "eslint-plugin-jsx-a11y": "^6.7.1",
-    "eslint-plugin-markdown": "^3.0.1",
-    "file-type": "^18.5.0",
+    "@eslint/js": "^8.56.0",
+    "@fontsource/barlow-condensed": "^5.0.13",
+    "@fontsource/montserrat": "^5.0.18",
+    "@vercel/analytics": "^1.2.2",
+    "@vercel/speed-insights": "^1.0.10",
+    "astro": "^4.7.1",
+    "astro-navbar": "^2.3.2",
+    "astro-seo": "^0.8.3",
+    "autoprefixer": "^10.4.19",
+    "eslint": "^8.56.0",
+    "eslint-plugin-astro": "^1.1.2",
+    "file-type": "^19.0.0",
     "find-cache-dir": "^5.0.0",
     "object-hash": "^3.0.0",
-    "postcss": "^8.4.29",
+    "photoswipe": "^5.4.3",
+    "postcss": "^8.4.38",
     "potrace": "^2.1.8",
-    "prettier": "^3.0.3",
-    "prettier-plugin-astro": "^0.12.0"
+    "prettier": "^3.2.5",
+    "prettier-plugin-astro": "^0.13.0",
+    "schema-dts": "^1.1.2",
+    "sharp": "^0.33.3",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.8.0"
   },
-  "packageManager": "pnpm@8.8.0",
-  "pnpm": {
-    "overrides": {
-      "imagetools-core@3.0.2": "3.0.3"
-    }
-  }
+  "packageManager": "pnpm@8.15.8"
 }

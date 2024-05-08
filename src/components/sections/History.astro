@@ -5,6 +5,9 @@ import HistorySection from '../common/HistorySection.astro';
 import Section from '../common/Section.astro';
 import Button from '../common/Button.astro';
 import Stack from '../common/Stack.astro';
+import history01 from '../../assets/history/01.jpg';
+import history02 from '../../assets/history/02.jpg';
+import history03 from '../../assets/history/03.jpg';
 
 const anchor = getAnchor('history');
 const blocks = [
@@ -12,7 +15,7 @@ const blocks = [
     data: {
       title: 'Jak to celé začalo?',
       overline: 'První krůčky',
-      image: { name: '01', alt: '' },
+      image: { src: history01, alt: '' },
     },
     body: `
       <p>Historie Štrapandy se&nbsp;začala psát počátkem roku 1975. Skupinka místních milovníků dálkových pochodů, které&nbsp;se&nbsp;v&nbsp;té době staly velice populární náplní volného času, přišla s&nbsp;nápadem uspořádat vlastní akci.</p>
@@ -23,7 +26,7 @@ const blocks = [
     data: {
       title: 'Sametový puchýř',
       overline: 'Sláva a prestiž',
-      image: { name: '02', alt: '' },
+      image: { src: history02, alt: '' },
     },
     body: `
       <p>Jak Štrapanda „dospívala“, rostl i&nbsp;počet jejích účastníků. Z&nbsp;38 na&nbsp;1. ročníku k&nbsp;překročení tisícovky v&nbsp;roce 1983. Součástí programu bývala také večerní setkání účastníků, původně u&nbsp;ohně a&nbsp;o&nbsp;něco později na&nbsp;tanečních zábavách, které&nbsp;byly velice oblíbené. Nějakou dobu na&nbsp;ně občas navazovaly také druhé etapy pochodu.</p>
@@ -35,7 +38,7 @@ const blocks = [
     data: {
       title: 'Změna je život',
       overline: 'A jde se dál!',
-      image: { name: '03', alt: '' },
+      image: { src: history03, alt: '' },
     },
     body: `
       <p>Tak&nbsp;jako pro&nbsp;celou zem, byl&nbsp;tento rok přelomem. Obnovila se&nbsp;činnost Klubu českých turistů a&nbsp;Provodínští se&nbsp;stali prvním odborem KČT na&nbsp;Českolipsku. Štrapanda mohla pokračovat. Trochu se&nbsp;obměnila sestava organizátorů, přibyli mladí. Také ale ubylo na&nbsp;nějakou dobu účastníků. Zájmy lidí se&nbsp;měnily a&nbsp;teprve po&nbsp;pár letech se&nbsp;účast stabilizovala znovu na&nbsp;sedmi až devíti stech turistech.</p>

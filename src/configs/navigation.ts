@@ -5,14 +5,14 @@ type NavigationSections =
   | 'gallery'
   | 'contact'
   | 'testimonials';
-type AnchorSection = {
+interface AnchorSection {
   label: string;
   anchor: string;
-};
-type HrefSection = {
+}
+interface HrefSection {
   label: string;
   href: string;
-};
+}
 
 type Navigation = Record<NavigationSections, AnchorSection | HrefSection>;
 
