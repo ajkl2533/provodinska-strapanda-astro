@@ -4,71 +4,29 @@ import { getAnchor } from '../../configs/navigation.js';
 import Button from '../common/Button.astro';
 import Section from '../common/Section.astro';
 import SectionHeader from '../common/SectionHeader.astro';
-import gal01 from '/src/assets/gallery2023/gal01.jpg';
-import gal02 from '/src/assets/gallery2023/gal02.jpg';
-import gal03 from '/src/assets/gallery2023/gal03.jpg';
-import gal04 from '/src/assets/gallery2023/gal04.jpg';
-import gal05 from '/src/assets/gallery2023/gal05.jpg';
-import gal06 from '/src/assets/gallery2023/gal06.jpg';
+import gal01 from '/src/assets/gallery2024/gal01.jpg';
+import gal02 from '/src/assets/gallery2024/gal02.jpg';
+import gal03 from '/src/assets/gallery2024/gal03.jpg';
+import gal04 from '/src/assets/gallery2024/gal04.jpg';
+import gal05 from '/src/assets/gallery2024/gal05.jpg';
+import gal06 from '/src/assets/gallery2024/gal06.jpg';
+import gal01full from '/src/assets/gallery2024/full/gal01.jpg?url';
+import gal02full from '/src/assets/gallery2024/full/gal02.jpg?url';
+import gal03full from '/src/assets/gallery2024/full/gal03.jpg?url';
+import gal04full from '/src/assets/gallery2024/full/gal04.jpg?url';
+import gal05full from '/src/assets/gallery2024/full/gal05.jpg?url';
+import gal06full from '/src/assets/gallery2024/full/gal06.jpg?url';
 
 const images = [
   [
     {
       original: {
-        href: 'https://lh3.googleusercontent.com/pw/ADCreHem55P3a_f5EfY6TWW27ONJMGOlnOhAuEIaVJXEdaRbdrNg-aeLZy7CDcK8_mvLzuisUjvaDJsPeN-fjcl_w0ma1K2XtnSNGF9Vj7p27cNc--L4Xz-I54__slRaCDminvTqQvCTmxetevd41-k45pp1=w797-h1200-s-no',
-        width: 797,
-        height: 1200,
+        href: gal01full,
+        width: 1000,
+        height: 667,
       },
       thumbnail: {
         src: gal01,
-        alt: 'Chvílemi se na startu Štrapandy tvořily fronty',
-      },
-    },
-  ],
-  [
-    {
-      original: {
-        href: 'https://lh3.googleusercontent.com/pw/ADCreHcENX3dXsGKqSi437HsccwrSg6Woj0qI5vY4RI-jrP1ny0RpG0m2JtreICR-iDbANyAl08mJB3V-Uk19UtBuLpakk-MiWyeRDXlatCthCvUqoaDqD-20JNyCHht7vdUntCYKDCQ8i8s9AeMmpg5KPJx=w1200-h797-s-no',
-        width: 1200,
-        height: 797,
-      },
-      thumbnail: {
-        src: gal02,
-        alt: 'Pro znavené účastníky bylo připraveno posezení',
-      },
-    },
-    {
-      original: {
-        href: 'https://lh3.googleusercontent.com/pw/ADCreHfMmfqP-5qABUEHQ7Gol6OQzMs58i4DRnM2JaJb-nfZur-ST0wbe4p1krN7t25PlNrPBoMNDbi2KhBrGvFdpOnDyCdSJaxjPyg2tNQAR4LhaLnuhBaIH5JzAF7Exchix8K9BaSR7oTFyIdVObECr6Hr=w797-h1200-s-no',
-        width: 797,
-        height: 1200,
-      },
-      thumbnail: {
-        src: gal03,
-        alt: 'Děti i dospělí, kteří pochod dokončili si mohli upéct špekáčky',
-      },
-    },
-  ],
-  [
-    {
-      original: {
-        href: 'https://lh3.googleusercontent.com/pw/ADCreHfiwGQHwal84hSMXu4vxhd2p8l5triFZWUhlnzscNZCbFjS6Inx8tcI1JxmEKKjY1y7QjFCbpCBxL8ndFtVBGphg2KF3yC8Oc1MgAqLS4qPM-x0mAzlp0AlH0xd4l1xTv9I70pghw4KpId-7vye0iKt=w797-h1200-s-no',
-        width: 797,
-        height: 1200,
-      },
-      thumbnail: {
-        src: gal04,
-        alt: 'Naši dobrovolníci jsou vždy připraveni poradit',
-      },
-    },
-    {
-      original: {
-        href: 'https://lh3.googleusercontent.com/pw/ADCreHcL2_WLmP-UTBMjfRp8bfx4b2Fc739HNcoxBlTozL51T6CdCojEWjk9VecTVnj0xIzHWXQFUmpZy_N8kwl96TEXh24LJLXiJwn9O6JFfTD0CeYTVvuplHKFysrvbINgd0Gm4KSgvNmfCgE4oWsMka48=w1200-h797-s-no',
-        width: 1200,
-        height: 797,
-      },
-      thumbnail: {
-        src: gal05,
         alt: 'Prezence na startu Provodínské Štrapandy 2023',
       },
     },
@@ -76,13 +34,61 @@ const images = [
   [
     {
       original: {
-        href: 'https://lh3.googleusercontent.com/pw/ADCreHf6BbHovmrqF7ki1ZTdXTj5ZteWuUA5YM1kxsMiAoKYLLygSMjIjxiSPlDGr0P0TYM4hVaJUeL8a-fJ81Qno8B1jxjNxky8TrYhaIL0lGJXFc6TKjnDLvo0gMYPuLZ3TU37R6GBccSo2rNmjylCuAPe=w797-h1200-s-no',
-        width: 797,
-        height: 1200,
+        href: gal02full,
+        width: 1000,
+        height: 667,
+      },
+      thumbnail: {
+        src: gal02,
+        alt: 'Naši dobrovolníci jsou vždy připraveni poradit',
+      },
+    },
+    {
+      original: {
+        href: gal03full,
+        width: 1000,
+        height: 667,
+      },
+      thumbnail: {
+        src: gal03,
+        alt: 'V cíli bylo o zábavu postaráno',
+      },
+    },
+  ],
+  [
+    {
+      original: {
+        href: gal04full,
+        width: 667,
+        height: 1000,
+      },
+      thumbnail: {
+        src: gal04,
+        alt: 'Petr Podrázký, předseda KČT Provodín a hlavní organizátor Provodínské Štrapandy',
+      },
+    },
+    {
+      original: {
+        href: gal05full,
+        width: 1000,
+        height: 667,
+      },
+      thumbnail: {
+        src: gal05,
+        alt: 'Pro znavené účastníky bylo připraveno posezení',
+      },
+    },
+  ],
+  [
+    {
+      original: {
+        href: gal06full,
+        width: 1000,
+        height: 667,
       },
       thumbnail: {
         src: gal06,
-        alt: 'K Provodínské Štrapandě tradičně patří i výborné jídlo',
+        alt: 'Účastníci na trati',
       },
     },
   ],
@@ -90,8 +96,8 @@ const images = [
 const anchor = getAnchor('gallery');
 ---
 
-<Section id={anchor} gradient="bottom">
-  <SectionHeader title="Štrapanda 2023 v obrazech" id={anchor} />
+<Section id={anchor} gradient="top">
+  <SectionHeader title="Štrapanda 2024 v obrazech" id={anchor} />
 
   <div class="gallery" id="gallery">
     {
@@ -124,12 +130,13 @@ const anchor = getAnchor('gallery');
     }
   </div>
   <div class="links">
-    <Button href="https://photos.app.goo.gl/12VgAGftNK91aUp89">
-      Všechny fotky ze Štrapandy 2023
+    <Button href="https://eu.zonerama.com/PetrP/Album/11613397">
+      Všechny fotky ze Štrapandy 2024
     </Button>
-    <Button href="https://photos.app.goo.gl/cDPQGBicLJY8gJ2TA">
-      Z dalších akcí
-    </Button>
+    <a href="https://photos.app.goo.gl/12VgAGftNK91aUp89">
+      Provodinská Štrapanda 2023
+    </a>
+    <a href="https://photos.app.goo.gl/cDPQGBicLJY8gJ2TA"> Z dalších akcí </a>
   </div>
   <script>
     import '../../scripts/load-gallery.ts';

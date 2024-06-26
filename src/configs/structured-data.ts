@@ -3,9 +3,9 @@ import type { Event, WithContext } from 'schema-dts';
 export const eventStructuredData: WithContext<Event> = {
   '@context': 'https://schema.org',
   '@type': 'Event',
-  name: 'PROVODÍNSKÁ ŠTRAPANDA 2024',
-  startDate: '2024-06-15',
-  endDate: '2024-06-15',
+  name: 'PROVODÍNSKÁ ŠTRAPANDA 2025',
+  startDate: '2025-06-21',
+  endDate: '2025-06-21',
   eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
   eventStatus: 'https://schema.org/EventScheduled',
   location: {

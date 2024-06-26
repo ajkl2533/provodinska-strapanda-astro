@@ -9,7 +9,9 @@ import Switcher from '../common/Switcher.astro';
 import bgHero from '../../assets/background.jpg';
 
 const sectionAnchor = getAnchor('home');
-const tracksAnchor = getAnchor('tracks');
+// const tracksAnchor = getAnchor('tracks');
+// const galleryAnchor = getAnchor('gallery');
+const testimonialsAnchor = getAnchor('testimonials');
 ---
 
 <section class="hero" id={sectionAnchor}>
@@ -17,16 +19,16 @@ const tracksAnchor = getAnchor('tracks');
     <Stack gutter={'s12'} justify="center" slot="center">
       <Switcher gutter={'s8'} threshold="60rem" class="headline">
         <h1 class="title-main text-condensed">
-          PROVODÍNSKÁ ŠTRAPANDA <span class="text-color-accent">2024</span>
+          PROVODÍNSKÁ ŠTRAPANDA <span class="text-color-accent">2025</span>
         </h1>
         <div class="separator"></div>
         <Stack gutter={'s1'} class="event-data">
-          <p class="h2">Sobota 15.&nbsp;června 2024</p>
+          <p class="h2">Sobota 21.&nbsp;června 2025</p>
           <p class="h3">Sportovní areál u&nbsp;nádraží Jestřebí</p>
-          <p class="h4">Start od 8:00 do 11:30</p>
+          <!-- <p class="h4">Start od 8:00 do 11:30</p> -->
         </Stack>
       </Switcher>
-      <CTA href={`#${tracksAnchor}`}>Prohlédnout trasy</CTA>
+      <CTA href={`#${testimonialsAnchor}`}>Zapsat do kroniky</CTA>
     </Stack>
     <Scroller slot="bottom" />
   </Cover>
