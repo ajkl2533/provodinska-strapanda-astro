@@ -17,53 +17,53 @@ const anchor = getAnchor('tracks');
 const hikingTracks: TrackType[] = [
   {
     data: {
-      length: 10,
-      map: 'https://mapy.cz/s/gadumocoja',
+      length: 7,
+      // map: 'https://mapy.cz/s/gadumocoja',
     },
-    body: 'Provodín — Staré Splavy — Provodín',
+    body: 'Provodín — u obory — Pod Spící Pannou — Provodín',
   },
   {
     data: {
-      length: 16,
-      map: 'https://mapy.cz/s/fududesose',
+      length: 17,
+      // map: 'https://mapy.cz/s/fududesose',
     },
-    body: '​Provodín — Jestřebí — Braniborská jeskyně — Staré Splavy — Provodín',
+    body: '​Provodín — Jestřebí — Dlouhý hřeben — Zahrádky — Karasy — Provodín',
   },
   {
     data: {
-      length: 28,
-      map: 'https://mapy.cz/s/pagacofope',
+      length: 27,
+      // map: 'https://mapy.cz/s/pagacofope',
     },
-    body: 'Provodín — Jestřebí — Braniborská jeskyně — Staré Splavy — Doksy — Břehyně — Borný — St. Splavy — Provodín',
+    body: 'Provodín — Jestřebí — Dlouhý hřeben — Zahrádky — Kvítkov — Doksy — Zahrádky — Karasy — Provodín',
   },
 ];
 const bikingTracks: TrackType[] = [
   {
     data: {
       length: 20,
-      map: 'https://mapy.cz/s/nehopofopa',
+      // map: 'https://mapy.cz/s/nehopofopa',
     },
-    body: 'Provodín — Srní — Okřešice — Sosnová — Zahrádky — Provodín',
+    body: 'Provodín — Senná brána — Veselí — Srní — Provodín',
   },
   {
     data: {
       length: 42,
-      map: 'https://mapy.cz/s/hulucomure',
+      // map: 'https://mapy.cz/s/hulucomure',
     },
-    body: 'Provodín — Senná brána — Veselí — Okřešice — Sosnová — Dubice — Kozly — Malý Bor — Holany — Borek — Zahrádky — Provodín',
+    body: 'Provodín — Břehyně — Kuřivody — Hradčany — Senná brána — Provodín',
   },
   {
     data: {
       length: 60,
-      map: 'https://mapy.cz/s/nanunuledo',
+      // map: 'https://mapy.cz/s/nanunuledo',
     },
-    body: 'Provodín — Senná brána — Veselí — Okřešice — Sosnová — Dubice — Kozly — Taneček — Kravaře — Blíževedly — Holany — Zahrádky — Provodín',
+    body: 'Provodín — Břehyně — Vrchbělá — Kuřivody — Hvězdov — Hradčany — Senná brána — Provodín',
   },
 ];
 ---
 
 <Section id={anchor} gradient="bottom">
-  <SectionHeader title="Trasy 2024" />
+  <SectionHeader title="Trasy" />
   <Stack gutter="s4" justify="normal">
     <Switcher threshold="48rem" gutter="s4" justify="center">
       {
