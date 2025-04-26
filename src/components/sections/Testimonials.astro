@@ -10,7 +10,7 @@ const anchor = getAnchor('testimonials');
 
 <Section id={anchor} gradient="bottom">
   <SectionHeader title="Kronika Provodínské Štrapandy" />
-  <iframe
+  <!-- <iframe
     class="tally-form"
     data-tally-src="https://tally.so/embed/w4QdgX?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
     loading="lazy"
@@ -35,9 +35,17 @@ const anchor = getAnchor('testimonials');
       const s = d.createElement('script');
       (s.src = w), (s.onload = v), (s.onerror = v), d.body.appendChild(s);
     }
-  </script>
-  <h3 style="text-align: center; margin: 0 auto;">Ročník 2023</h3>
+  </script> -->
   <Stack gutter="s10" justify="center">
+    <Quote author="Dana">
+      Jeli jsme letos po druhé cyklo trasu a moc super akce.<br />Už se těšíme
+      na příští.
+    </Quote>
+    <Quote author="Vendula">
+      Provodínská Štrapanda je skvělá jezdíme každý rok s přáteli na kolech.
+      Skvělá krajina moc se nám tam líbí&nbsp;😊. Cyklotrasy super vymyšlené,
+      někdy je to ale záhul 😁
+    </Quote>
     <Quote author="Petr">
       Jako organizátor akce Za kvetoucí měsíčnicí vím, co příprava
       a&nbsp;organizace sebou přináší. Jsem moc rád, že se podařilo v akci
@@ -53,7 +61,6 @@ const anchor = getAnchor('testimonials');
       Bylo to moc super. Letos jsem šla i&nbsp;s&nbsp;kamarádkou poprvé
       a&nbsp;byly jsme obě nadšené!
     </Quote>
-    <Quote author="Vendula">Bylo to super, jezdíme každý rok 👍</Quote>
   </Stack>
 </Section>
 
