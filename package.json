@@ -25,7 +25,7 @@
     "@fontsource/montserrat": "^5.0.18",
     "@vercel/analytics": "^1.2.2",
     "@vercel/speed-insights": "^1.0.10",
-    "astro": "^4.7.1",
+    "astro": "^4.16.1",
     "astro-navbar": "^2.3.2",
     "astro-seo": "^0.8.3",
     "autoprefixer": "^10.4.19",
