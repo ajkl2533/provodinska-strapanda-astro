@@ -1,6 +1,6 @@
-{
-  "name": "MyWebSite",
-  "short_name": "MySite",
+git {
+  "name": "Provodínská Štrapanda 2026",
+  "short_name": "PŠ 2026",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",

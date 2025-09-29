@@ -2,12 +2,14 @@
 export interface Props {
   href: string;
   children: string;
+  target?: string;
+  rel?: string;
 }
 
-const { href } = Astro.props;
+const { href, target, rel } = Astro.props;
 ---
 
-<a href={href} class="button"><slot /></a>
+<a href={href} target={target} rel={rel} class="button"><slot /></a>
 
 <style>
   .button {
