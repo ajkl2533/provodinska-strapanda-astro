@@ -4,53 +4,71 @@ import { getAnchor } from '../../configs/navigation.js';
 import Button from '../common/Button.astro';
 import Section from '../common/Section.astro';
 import SectionHeader from '../common/SectionHeader.astro';
-import gal01 from '/src/assets/gallery2024/gal01.jpg';
-import gal02 from '/src/assets/gallery2024/gal02.jpg';
-import gal03 from '/src/assets/gallery2024/gal03.jpg';
-import gal04 from '/src/assets/gallery2024/gal04.jpg';
-import gal05 from '/src/assets/gallery2024/gal05.jpg';
-import gal06 from '/src/assets/gallery2024/gal06.jpg';
-import gal01full from '/src/assets/gallery2024/full/gal01.jpg?url';
-import gal02full from '/src/assets/gallery2024/full/gal02.jpg?url';
-import gal03full from '/src/assets/gallery2024/full/gal03.jpg?url';
-import gal04full from '/src/assets/gallery2024/full/gal04.jpg?url';
-import gal05full from '/src/assets/gallery2024/full/gal05.jpg?url';
-import gal06full from '/src/assets/gallery2024/full/gal06.jpg?url';
+import gal01 from '/src/assets/gallery2025/gal01.jpg';
+import gal02 from '/src/assets/gallery2025/gal02.jpg';
+import gal03 from '/src/assets/gallery2025/gal03.jpg';
+import gal04 from '/src/assets/gallery2025/gal04.jpg';
+import gal05 from '/src/assets/gallery2025/gal05.jpg';
+import gal06 from '/src/assets/gallery2025/gal06.jpg';
 
 const images = [
   [
     {
       original: {
-        href: gal01full,
-        width: 1000,
-        height: 667,
+        href: 'https://lh3.googleusercontent.com/pw/AP1GczPIPmcq4FpI8Vdfpac_t7z7vH1FZZIWpmDdxqvMMv7OiOWPEJw-y2zqXAJ38vExy2Og6d9Q6Y7B1GC6FEUD3NMKvD2cbqb2xb5DNrv0kpZzJErQ0jFT2ihK9cJbs8T3ikUTo7GA4N12DjTXZNHqzGG-=w1616-h1083-s-no-gm',
+        width: 1616,
+        height: 1083,
       },
       thumbnail: {
         src: gal01,
-        alt: 'Prezence na startu Provodínské Štrapandy 2023',
+        alt: 'Naši dobrovolníci jsou vždy připraveni poradit',
       },
     },
   ],
   [
     {
       original: {
-        href: gal02full,
-        width: 1000,
-        height: 667,
+        href: 'https://lh3.googleusercontent.com/pw/AP1GczMbXg2YW2k3mZ41YgCIeZEDPd_Kv_l8LRHH0O_to1XQGT6fNeNd3km-DMEKH8cJrLaON-10ZMndGywgh3ZzATfktDVQf8kfx2gxbMy7uBIeCynDoqh_RZnmMo00Xz7mF8yfYjpzqpig47JGIFOV_K4q=w1616-h1083-s-no-gm',
+        width: 1616,
+        height: 1083,
       },
       thumbnail: {
         src: gal02,
-        alt: 'Naši dobrovolníci jsou vždy připraveni poradit',
+        alt: 'Prezence na startu Provodínské Štrapandy 2025',
       },
     },
     {
       original: {
-        href: gal03full,
-        width: 1000,
-        height: 667,
+        href: 'https://lh3.googleusercontent.com/pw/AP1GczPiduSAhh5h1ox2CzD_ht9ZJ_yareAMtXDH0ZedkcwShlw_NUv0bSgZquIgVCz1cTc3T6Zf1bNwGPrC7GVbn7qQCCxPFBtXc43SbBb2cJ44hQu-nJuxAzrih4OtsksF9ctQp6Se1xxhUuqTO_KljbRo=w1616-h1083-s-no-gm',
+        width: 1616,
+        height: 1083,
       },
       thumbnail: {
         src: gal03,
+        alt: 'K Provodínské Štrapandě tradičně patří i výborné jídlo',
+      },
+    },
+  ],
+  [
+    {
+      original: {
+        href: 'https://lh3.googleusercontent.com/pw/AP1GczPyJwEj80sC2RGrJvZlmop1kAIC8rH37EiNPVEB3ZXARtbCEvIhzX-OMDAI_sYmXgDXa86QEGyrToz_u3Adzy_zoqsl448inqiwHyWbjl656Qliw4bOqHPk-YZ3LSH447E7qj7-b-gsFKpOlBsdmIiO=w1083-h1616-s-no-gm',
+        width: 1083,
+        height: 1616,
+      },
+      thumbnail: {
+        src: gal04,
+        alt: 'Jan Piškula, starosta Provodína, bez kterého by Štrapanda nebyla',
+      },
+    },
+    {
+      original: {
+        href: 'https://lh3.googleusercontent.com/pw/AP1GczNewQnIvS9Amgd6qMHCP8TFc58nXNaToMNYhCJvHHlN6z2BxpVb7kFtAtYS4VL9datMBR1BHpphIRHRCH-IKp3TrZale9Ix5dTx1r5rbgNZqpHdm1lDF3dWTOZrms9ZhBPR6SQ9g9p2OYhRSxPW4ib9=w1616-h1616-s-no-gm',
+        width: 1616,
+        height: 1616,
+      },
+      thumbnail: {
+        src: gal05,
         alt: 'V cíli bylo o zábavu postaráno',
       },
     },
@@ -58,37 +76,13 @@ const images = [
   [
     {
       original: {
-        href: gal04full,
-        width: 667,
-        height: 1000,
-      },
-      thumbnail: {
-        src: gal04,
-        alt: 'Petr Podrázký, předseda KČT Provodín a hlavní organizátor Provodínské Štrapandy',
-      },
-    },
-    {
-      original: {
-        href: gal05full,
-        width: 1000,
-        height: 667,
-      },
-      thumbnail: {
-        src: gal05,
-        alt: 'Pro znavené účastníky bylo připraveno posezení',
-      },
-    },
-  ],
-  [
-    {
-      original: {
-        href: gal06full,
-        width: 1000,
-        height: 667,
+        href: 'https://lh3.googleusercontent.com/pw/AP1GczNmEoKhDN4gV7Xn3rBJ7MIPLJ52nGTVfniGaXWz6lRgdpILbSBP3hALJ8VvqPMw_C0_KmE9KVmLXFAbmgd4clIm2wT4iECYr8-A8y835PqI0xnU23l-7CMlYDAxBMkSmsRD5uvxcVwqcrrN32AMAzDF=w1616-h1616-s-no-gm',
+        width: 1616,
+        height: 1616,
       },
       thumbnail: {
         src: gal06,
-        alt: 'Účastníci na trati',
+        alt: 'Organizace pochodu může být někdy náročná',
       },
     },
   ],
@@ -96,8 +90,8 @@ const images = [
 const anchor = getAnchor('gallery');
 ---
 
-<Section id={anchor} gradient="bottom">
-  <SectionHeader title="Štrapanda 2024 v obrazech" id={anchor} />
+<Section id={anchor} gradient="top">
+  <SectionHeader title="Štrapanda 2025 v obrazech" id={anchor} />
 
   <div class="gallery" id="gallery">
     {
@@ -130,13 +124,34 @@ const anchor = getAnchor('gallery');
     }
   </div>
   <div class="links">
-    <Button href="https://eu.zonerama.com/PetrP/Album/11613397">
-      Všechny fotky ze Štrapandy 2024
+    <Button
+      href="https://photos.app.goo.gl/3suhrmZzXV8AMD6A8"
+      target="_blank"
+      rel="noopener"
+    >
+      Všechny fotky ze Štrapandy 2025
     </Button>
-    <a href="https://photos.app.goo.gl/12VgAGftNK91aUp89">
-      Provodinská Štrapanda 2023
+    <a
+      href="https://eu.zonerama.com/PetrP/Album/11613397"
+      target="_blank"
+      rel="noopener"
+    >
+      Provodínská Štrapanda 2024
     </a>
-    <a href="https://photos.app.goo.gl/cDPQGBicLJY8gJ2TA"> Z dalších akcí </a>
+    <a
+      href="https://photos.app.goo.gl/12VgAGftNK91aUp89"
+      target="_blank"
+      rel="noopener"
+    >
+      Provodínská Štrapanda 2023
+    </a>
+    <a
+      href="https://photos.app.goo.gl/cDPQGBicLJY8gJ2TA"
+      target="_blank"
+      rel="noopener"
+    >
+      Z dalších akcí
+    </a>
   </div>
   <script>
     import '../../scripts/load-gallery.ts';
