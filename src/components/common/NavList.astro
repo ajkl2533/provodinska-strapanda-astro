@@ -9,27 +9,25 @@ const { class: className } = Astro.props;
 ---
 
 <ul class:list={['nav-list', className]}>
-  {
-    Object.entries(navigation).map(([, item]) => {
-      if ('href' in item) {
-        return (
-          <li>
-            <a class="nav-list-item" href={item.href}>
-              {item.label}
-            </a>
-          </li>
-        );
-      } else {
-        return (
-          <li>
-            <a class="nav-list-item" href={`#${item.anchor}`}>
-              {item.label}
-            </a>
-          </li>
-        );
-      }
-    })
-  }
+  {Object.entries(navigation).map(([, item]) => {
+    if ('href' in item) {
+      return (
+        <li>
+          <a class="nav-list-item" href={item.href}>
+            {item.label}
+          </a>
+        </li>
+      );
+    } else {
+      return (
+        <li>
+          <a class="nav-list-item" href={`#${item.anchor}`}>
+            {item.label}
+          </a>
+        </li>
+      );
+    }
+  })}
 </ul>
 <style>
   .nav-list {

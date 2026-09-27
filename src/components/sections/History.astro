@@ -51,7 +51,9 @@ const blocks = [
 <Section id={anchor} gradient="top">
   <SectionHeader title="Z historie pochodu" />
   <div class="history-stack stack">
-    {blocks.map((block) => <HistorySection entry={block} />)}
+    {blocks.map((block, index) => (
+      <HistorySection entry={block} isOdd={index % 2 === 1} />
+    ))}
   </div>
   <Stack justify="center">
     <Button href="https://photos.app.goo.gl/ahg39tqDGVb8ewGB7">

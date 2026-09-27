@@ -11,11 +11,12 @@ export interface Props {
     };
     body: string;
   };
+  isOdd?: boolean;
 }
-const { entry } = Astro.props;
+const { entry, isOdd } = Astro.props;
 ---
 
-<article class="history-section">
+<article class="history-section" data-odd={isOdd}>
   <div class="history-section-block stack">
     <header class="history-section-header">
       <p class="overline">{entry.data.overline}</p>
@@ -64,7 +65,7 @@ const { entry } = Astro.props;
   :global(.history-section) {
     counter-increment: history;
   }
-  :global(.history-section:nth-of-type(2n)) {
+  .history-section[data-odd="true"] {
     flex-direction: var(--historySectionEvenDirection);
   }
   .history-section {

@@ -5,7 +5,7 @@ export interface Props {
   gutter?: Space;
   padding?: Space;
   class?: string;
-  children: unknown;
+  children?: unknown;
 }
 const { gutter = 's4', padding = 's4', class: className } = Astro.props;
 
@@ -15,7 +15,9 @@ const cssPadding = `var(--${padding})`;
 
 <div class:list={['cover', className]}>
   <slot name="top" />
-  <div class="cover-center"><slot name="center" /></div>
+  <div class="cover-center">
+    <slot name="center" />
+  </div>
   <slot name="bottom" />
 </div>
 
@@ -27,6 +29,8 @@ const cssPadding = `var(--${padding})`;
     padding: var(--padding);
     padding-left: max(var(--padding), env(safe-area-inset-left));
     padding-right: max(var(--padding), env(safe-area-inset-right));
+    position: relative;
+    z-index: 1;
   }
   @supports (min-block-size: 1svh) {
     .cover {

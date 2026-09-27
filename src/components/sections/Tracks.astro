@@ -13,6 +13,7 @@ interface TrackType {
   };
   body: string;
 }
+
 const anchor = getAnchor('tracks');
 const hikingTracks: TrackType[] = [
   {
@@ -66,28 +67,24 @@ const bikingTracks: TrackType[] = [
   <SectionHeader title="Trasy 2026" />
   <Stack gutter="s4" justify="normal">
     <Switcher threshold="48rem" gutter="s4" justify="center">
-      {
-        hikingTracks.map((track) => (
-          <Track
-            length={track.data.length}
-            type="hike"
-            map={track.data.map}
-            description={track.body}
-          />
-        ))
-      }
+      {hikingTracks.map((track) => (
+        <Track
+          length={track.data.length}
+          type="hike"
+          map={track.data.map}
+          description={track.body}
+        />
+      ))}
     </Switcher>
     <Switcher threshold="48rem" gutter="s4" justify="center">
-      {
-        bikingTracks.map((track) => (
-          <Track
-            length={track.data.length}
-            type="bike"
-            map={track.data.map}
-            description={track.body}
-          />
-        ))
-      }
+      {bikingTracks.map((track) => (
+        <Track
+          length={track.data.length}
+          type="bike"
+          map={track.data.map}
+          description={track.body}
+        />
+      ))}
     </Switcher>
   </Stack>
 </Section>

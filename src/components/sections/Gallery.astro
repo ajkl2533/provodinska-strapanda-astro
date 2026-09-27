@@ -94,34 +94,32 @@ const anchor = getAnchor('gallery');
   <SectionHeader title="Štrapanda 2025 v obrazech" id={anchor} />
 
   <div class="gallery" id="gallery">
-    {
-      images.map((group) => (
-        <div class="gallery-group">
-          {group.map(({ original, thumbnail }) => (
-            <a
-              href={original.href}
-              data-pswp-width={original.width}
-              data-pswp-height={original.height}
-              class="gallery-link"
-            >
-              <Picture
-                src={thumbnail.src}
-                alt={thumbnail.alt}
-                class="gallery-image"
-                widths={[264, 480]}
-                sizes="(max-width: 480px) 100vw, 264px"
-                width={thumbnail.src.width / 2}
-                height={thumbnail.src.height / 2}
-                decoding="async"
-                loading="lazy"
-                fetchpriority="low"
-                formats={['avif', 'webp', 'jpeg']}
-              />
-            </a>
-          ))}
-        </div>
-      ))
-    }
+    {images.map((group) => (
+      <div class="gallery-group">
+        {group.map(({ original, thumbnail }) => (
+          <a
+            href={original.href}
+            data-pswp-width={original.width}
+            data-pswp-height={original.height}
+            class="gallery-link"
+          >
+            <Picture
+              src={thumbnail.src}
+              alt={thumbnail.alt}
+              class="gallery-image"
+              widths={[264, 480]}
+              sizes="(max-width: 480px) 100vw, 264px"
+              width={thumbnail.src.width / 2}
+              height={thumbnail.src.height / 2}
+              decoding="async"
+              loading="lazy"
+              fetchpriority="low"
+              formats={['avif', 'webp', 'jpeg']}
+            />
+          </a>
+        ))}
+      </div>
+    ))}
   </div>
   <div class="links">
     <Button
