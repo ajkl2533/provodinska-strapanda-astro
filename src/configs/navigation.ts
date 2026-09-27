@@ -1,10 +1,5 @@
 type NavigationSections =
-  | 'home'
-  | 'tracks'
-  | 'history'
-  | 'gallery'
-  | 'contact'
-  | 'testimonials';
+  'home' | 'tracks' | 'history' | 'gallery' | 'contact' | 'testimonials';
 interface AnchorSection {
   label: string;
   anchor: string;

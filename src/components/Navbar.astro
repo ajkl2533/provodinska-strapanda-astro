@@ -89,7 +89,10 @@ const homeAnchor = getAnchor('home');
     overscroll-behavior-y: contain;
     overflow-y: auto;
   }
-  .main-nav-list {
+  .nav.hidden {
+    display: none;
+  }
+  :global(.main-nav-list) {
     text-align: center;
     flex-direction: column;
     gap: var(--s4);

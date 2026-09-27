@@ -9,7 +9,9 @@ export interface Props {
 const { href, target, rel } = Astro.props;
 ---
 
-<a href={href} target={target} rel={rel} class="button"><slot /></a>
+<a href={href} target={target} rel={rel} class="button">
+  <slot />
+</a>
 
 <style>
   .button {

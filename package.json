@@ -4,12 +4,11 @@
   "version": "0.0.1",
   "license": "MIT",
   "engines": {
-    "node": "22.x",
-    "pnpm": "8.x"
+    "node": ">=22.12.0"
   },
   "scripts": {
-    "start": "astro check --watch & astro dev",
-    "build": "astro build",
+    "dev": "astro dev",
+    "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint 'src/**/*.{js,ts,jsx,tsx,astro}'",
@@ -17,28 +16,25 @@
     "format": "prettier -w ./src"
   },
   "dependencies": {
-    "@astrojs/check": "^0.6.0",
-    "@astrojs/vercel": "^7.5.4",
-    "@astropub/codecs": "^0.4.4",
-    "@eslint/js": "^8.56.0",
-    "@fontsource/barlow-condensed": "^5.0.13",
-    "@fontsource/montserrat": "^5.0.18",
-    "@vercel/analytics": "^1.2.2",
-    "@vercel/speed-insights": "^1.0.10",
-    "astro": "^4.7.1",
-    "astro-navbar": "^2.3.2",
-    "astro-seo": "^0.8.3",
-    "autoprefixer": "^10.4.19",
-    "eslint": "^8.56.0",
-    "eslint-plugin-astro": "^1.1.2",
-    "photoswipe": "^5.4.3",
-    "postcss": "^8.4.38",
-    "prettier": "^3.2.5",
-    "prettier-plugin-astro": "^0.13.0",
-    "schema-dts": "^1.1.2",
-    "sharp": "^0.33.3",
-    "typescript": "^5.4.5",
-    "typescript-eslint": "^7.8.0"
+    "@astrojs/check": "^0.9.10",
+    "@eslint/js": "^10.0.1",
+    "@vercel/speed-insights": "^2.0.0",
+    "astro": "^7.3.5",
+    "astro-navbar": "^2.4.0",
+    "astro-seo": "^1.2.0",
+    "photoswipe": "^5.4.4",
+    "schema-dts": "^2.0.0",
+    "sharp": "^0.35.4",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.70.1"
   },
-  "packageManager": "pnpm@8.15.8"
+  "allowScripts": {
+    "esbuild": true
+  },
+  "devDependencies": {
+    "eslint": "^10.11.0",
+    "eslint-plugin-astro": "^3.2.1",
+    "prettier": "3.9.9",
+    "prettier-plugin-astro": "1.1.0"
+  }
 }

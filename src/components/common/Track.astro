@@ -1,12 +1,11 @@
 ---
-import type { CollectionEntry } from 'astro:content';
 import MapIcon from '../../assets/icons/map.svg?raw';
 
 export interface Props {
-  length: CollectionEntry<'tracks'>['data']['length'];
-  type: CollectionEntry<'tracks'>['data']['type'];
-  map: CollectionEntry<'tracks'>['data']['map'];
-  description: CollectionEntry<'tracks'>['body'];
+  length: number;
+  type: 'hike' | 'bike';
+  map?: string;
+  description: string;
 }
 
 const { length, type, description, map } = Astro.props;
@@ -18,13 +17,11 @@ const { length, type, description, map } = Astro.props;
     <h3>{length}&nbsp;km</h3>
   </header>
   <p class="desc">{description}</p>
-  {
-    map && (
-      <a data-length={map} href={map} target="_blank">
-        <Fragment set:html={MapIcon} /> Mapa trasy
-      </a>
-    )
-  }
+  {map && (
+    <a data-length={map} href={map} target="_blank">
+      <Fragment set:html={MapIcon} /> Mapa trasy
+    </a>
+  )}
 </article>
 
 <style>
@@ -39,11 +36,13 @@ const { length, type, description, map } = Astro.props;
     max-width: 26rem;
   }
   .track.hike {
-    background-image: url('/src/assets/hike.svg'),
+    background-image:
+      url('/src/assets/hike.svg'),
       linear-gradient(180deg, var(--green700) 0%, var(--green800) 100%);
   }
   .track.bike {
-    background-image: url('/src/assets/bike.svg'),
+    background-image:
+      url('/src/assets/bike.svg'),
       linear-gradient(180deg, var(--green700) 0%, var(--green800) 100%);
   }
   .track a {
